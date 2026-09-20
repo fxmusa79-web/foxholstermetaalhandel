@@ -8,10 +8,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy --config wrangler.jsonc --autoconfig=false"
   },
   "devDependencies": {
     "vite": "^8.3.0",
-    "wrangler": "^4.135.0"
+    "wrangler": "4.135.0"
   }
 }

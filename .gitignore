@@ -35,6 +35,11 @@ Thumbs.db
 # Original supplied asset pack — web copies live in public/images
 foxholster_assets_renamed/
 
+# Leftover root copies; production heroes are public/images/hero/*
+/hero-desktop.png
+/hero-phone.jpg
+/hero-phone.png
+
 # SSH keys and credentials — never commit
 .ssh/
 *.pem
