@@ -34,10 +34,8 @@ export function topbarHtml() {
   return `
     <div class="topbar">
       <div class="container topbar__inner">
-        <div class="topbar__meta">
-          <a href="${phoneHref()}">${escapeHtml(business.phone)}</a>
-          <a href="${emailHref()}">${escapeHtml(business.email)}</a>
-        </div>
+        <a class="topbar__phone" href="${phoneHref()}">${escapeHtml(business.phone)}</a>
+        <a class="topbar__email" href="${emailHref()}">${escapeHtml(business.email)}</a>
         <span class="topbar__tag">${escapeHtml(business.audience)}</span>
       </div>
     </div>
