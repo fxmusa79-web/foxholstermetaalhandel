@@ -32,6 +32,8 @@ export const business = {
   collectionNumber: '01.853',
   processorNumber: '0.1V',
   vihb: 'GR 5-3716',
+  googleProfileUrl: 'https://share.google/Xq5MsQbm5nzGwm0Ob',
+  whatsappMessage: 'Goedendag, ik neem contact op via de website van Foxholster Metaalhandel.',
 }
 
 export const navItems = [
@@ -84,6 +86,13 @@ export function phoneHref(number = business.phone) {
 export function emailHref() {
   if (isPlaceholder(business.email)) return '/pages/contact/'
   return `mailto:${business.email}`
+}
+
+export function whatsappHref() {
+  const digits = String(business.mobileFallback).replace(/\D/g, '')
+  const intl = digits.startsWith('0') ? `31${digits.slice(1)}` : digits
+  const text = encodeURIComponent(business.whatsappMessage)
+  return `https://wa.me/${intl}?text=${text}`
 }
 
 export function formattedAddress() {

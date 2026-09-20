@@ -1,8 +1,5 @@
-import { business, phoneHref } from '../data/business.js'
+import { business, phoneHref, whatsappHref } from '../data/business.js'
 
-const WHATSAPP_TEXT = encodeURIComponent(
-  'Goedendag, ik neem contact op via de website van Foxholster Metaalhandel.',
-)
 const CLOSE_MS = 260
 
 export function contactWidgetHtml() {
@@ -11,7 +8,7 @@ export function contactWidgetHtml() {
       <div class="contact-fab__menu" id="contact-fab-menu" hidden>
         <a
           class="contact-fab__item"
-          href="https://wa.me/31650565966?text=${WHATSAPP_TEXT}"
+          href="${whatsappHref()}"
           target="_blank"
           rel="noopener noreferrer"
         >
