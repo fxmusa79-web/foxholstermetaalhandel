@@ -28,7 +28,13 @@
     gap: 0.5rem;
   }
 
-  .consent-actions .consent-btn--primary {
+  .consent-banner .consent-btn--ghost,
+  .consent-banner .consent-btn--primary {
+    width: auto;
+    min-width: 11.25rem;
+  }
+
+  .consent-actions .consent-btn--text {
     grid-column: auto;
   }
 

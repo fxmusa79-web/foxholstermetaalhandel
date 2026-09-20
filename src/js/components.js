@@ -234,10 +234,14 @@ export function consentHtml() {
   return `
     <div class="consent-banner" data-consent-banner hidden>
       <div class="consent-banner__inner">
-        <p class="consent-banner__text">Deze website gebruikt noodzakelijke cookies. Met uw toestemming gebruiken we later ook analytics om de website te verbeteren.</p>
+        <p class="consent-banner__text">
+          Deze website gebruikt noodzakelijke opslag om uw cookievoorkeur te onthouden. Optionele analytics wordt alleen
+          geactiveerd na toestemming, als die dienst is ingeschakeld.
+          <a href="/pages/cookiebeleid/">Lees het cookiebeleid</a>.
+        </p>
         <div class="consent-actions">
-          <button class="consent-btn consent-btn--primary" type="button" data-consent-accept>Analytics toestaan</button>
           <button class="consent-btn consent-btn--ghost" type="button" data-consent-necessary>Alleen noodzakelijk</button>
+          <button class="consent-btn consent-btn--primary" type="button" data-consent-accept>Analytics toestaan</button>
           <button class="consent-btn consent-btn--text" type="button" data-consent-open>Instellingen</button>
         </div>
       </div>
@@ -248,7 +252,7 @@ export function consentHtml() {
         <div class="consent-row">
           <div>
             <strong>Noodzakelijk</strong>
-            <p class="u-muted">Nodig voor de werking van de website. Altijd aan.</p>
+            <p class="u-muted">Nodig om de website te laten werken en uw cookievoorkeur te onthouden. Altijd aan.</p>
           </div>
           <label>
             <span class="u-sr-only">Noodzakelijke cookies</span>
@@ -258,7 +262,7 @@ export function consentHtml() {
         <div class="consent-row">
           <div>
             <strong>Analytics</strong>
-            <p class="u-muted">Optioneel. Helpt de website te verbeteren en wordt alleen gebruikt na toestemming.</p>
+            <p class="u-muted">Optioneel en niet vooraf aangevinkt. Wordt alleen gebruikt na toestemming, als een analyticsdienst is gekoppeld. Op dit moment is geen optionele analytics actief.</p>
           </div>
           <label>
             <span class="u-sr-only">Analytics cookies</span>
