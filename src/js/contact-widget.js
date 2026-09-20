@@ -118,25 +118,4 @@ export function initContactWidget() {
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => setOpen(false))
   })
-
-  syncConsentOffset()
-}
-
-function syncConsentOffset() {
-  const banner = document.querySelector('[data-consent-banner]')
-  const apply = () => {
-    const extra =
-      banner && !banner.hidden
-        ? Math.ceil(banner.getBoundingClientRect().height) + 12
-        : 0
-    document.documentElement.style.setProperty('--consent-banner-space', `${extra}px`)
-  }
-
-  apply()
-  if (!banner) return
-  new ResizeObserver(apply).observe(banner)
-  new MutationObserver(apply).observe(banner, {
-    attributes: true,
-    attributeFilter: ['hidden'],
-  })
 }

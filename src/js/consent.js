@@ -45,45 +45,103 @@ export function initConsent() {
   const stored = readConsent() || defaultConsent
   applyConsent(stored)
   if (analyticsToggle) analyticsToggle.checked = Boolean(stored.analytics)
-  if (!readConsent()) banner.hidden = false
+
+  const setCookieSpace = (on) => {
+    const root = document.documentElement
+    root.classList.toggle('cookie-open', on)
+    document.body?.classList.toggle('cookie-open', on)
+    if (!on) {
+      root.style.setProperty('--cookie-height', '0px')
+      root.style.setProperty('--consent-banner-space', '0px')
+      return
+    }
+    const height = Math.ceil(banner.getBoundingClientRect().height)
+    root.style.setProperty('--cookie-height', `${height}px`)
+    root.style.setProperty('--consent-banner-space', `${height + 24}px`)
+  }
+
+  const showBanner = () => {
+    banner.hidden = false
+    requestAnimationFrame(() => {
+      banner.classList.add('is-in')
+      setCookieSpace(true)
+    })
+  }
+
+  const hideBanner = () => {
+    banner.classList.remove('is-in')
+    setCookieSpace(false)
+    banner.hidden = true
+  }
+
+  const panelFocusables = () =>
+    [...panel.querySelectorAll('button, [href], input:not([disabled]), select, textarea')].filter(
+      (el) => !el.hasAttribute('hidden') && el.tabIndex !== -1
+    )
 
   const closePanel = () => {
     panel.hidden = true
+    if (!readConsent()) showBanner()
   }
 
   const openPanel = () => {
     const current = readConsent() || defaultConsent
     if (analyticsToggle) analyticsToggle.checked = Boolean(current.analytics)
+    hideBanner()
     panel.hidden = false
     panel.querySelector('[data-consent-save]')?.focus()
   }
 
+  if (!readConsent()) showBanner()
+
+  const spaceObserver = new ResizeObserver(() => {
+    if (!banner.hidden) setCookieSpace(true)
+  })
+  spaceObserver.observe(banner)
+
   document.querySelector('[data-consent-necessary]')?.addEventListener('click', () => {
     applyConsent(writeConsent({ analytics: false }))
-    banner.hidden = true
+    hideBanner()
   })
 
   document.querySelector('[data-consent-accept]')?.addEventListener('click', () => {
     applyConsent(writeConsent({ analytics: true }))
-    banner.hidden = true
+    hideBanner()
   })
 
   document.querySelectorAll('[data-consent-open]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      banner.hidden = true
-      openPanel()
-    })
+    btn.addEventListener('click', openPanel)
   })
 
   document.querySelector('[data-consent-close]')?.addEventListener('click', closePanel)
 
   document.querySelector('[data-consent-save]')?.addEventListener('click', () => {
     applyConsent(writeConsent({ analytics: Boolean(analyticsToggle?.checked) }))
-    closePanel()
-    banner.hidden = true
+    panel.hidden = true
+    hideBanner()
+  })
+
+  panel.addEventListener('click', (event) => {
+    if (event.target === panel) closePanel()
   })
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !panel.hidden) closePanel()
+    if (panel.hidden) return
+    if (event.key === 'Escape') {
+      closePanel()
+      return
+    }
+    if (event.key !== 'Tab') return
+    const items = panelFocusables()
+    if (!items.length) return
+    const first = items[0]
+    const last = items[items.length - 1]
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault()
+      last.focus()
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault()
+      first.focus()
+    }
   })
 }

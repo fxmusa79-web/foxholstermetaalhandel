@@ -154,11 +154,11 @@ export function consentHtml() {
   return `
     <div class="consent-banner" data-consent-banner hidden>
       <div class="consent-banner__inner">
-        <p>We gebruiken noodzakelijke cookies voor de werking van de site. Analytics wordt alleen geladen na toestemming en is op dit moment nog niet gekoppeld.</p>
+        <p class="consent-banner__text">Deze website gebruikt noodzakelijke cookies. Met uw toestemming gebruiken we later ook analytics om de website te verbeteren.</p>
         <div class="consent-actions">
-          <button class="btn btn--outline btn--small" type="button" data-consent-necessary>Alleen noodzakelijk</button>
-          <button class="btn btn--primary btn--small" type="button" data-consent-accept>Analytics toestaan</button>
-          <button class="btn btn--outline btn--small" type="button" data-consent-open>Instellingen</button>
+          <button class="consent-btn consent-btn--primary" type="button" data-consent-accept>Analytics toestaan</button>
+          <button class="consent-btn consent-btn--ghost" type="button" data-consent-necessary>Alleen noodzakelijk</button>
+          <button class="consent-btn consent-btn--text" type="button" data-consent-open>Instellingen</button>
         </div>
       </div>
     </div>
@@ -168,7 +168,7 @@ export function consentHtml() {
         <div class="consent-row">
           <div>
             <strong>Noodzakelijk</strong>
-            <p class="u-muted">Vereist voor de werking van de website. Altijd aan.</p>
+            <p class="u-muted">Nodig voor de werking van de website. Altijd aan.</p>
           </div>
           <label>
             <span class="u-sr-only">Noodzakelijke cookies</span>
@@ -178,7 +178,7 @@ export function consentHtml() {
         <div class="consent-row">
           <div>
             <strong>Analytics</strong>
-            <p class="u-muted">Nog niet gekoppeld. Er wordt geen meetscript geladen.</p>
+            <p class="u-muted">Optioneel. Helpt de website te verbeteren en wordt alleen gebruikt na toestemming.</p>
           </div>
           <label>
             <span class="u-sr-only">Analytics cookies</span>
@@ -186,8 +186,8 @@ export function consentHtml() {
           </label>
         </div>
         <div class="consent-actions">
-          <button class="btn btn--primary btn--small" type="button" data-consent-save>Opslaan</button>
-          <button class="btn btn--outline btn--small" type="button" data-consent-close>Sluiten</button>
+          <button class="consent-btn consent-btn--primary" type="button" data-consent-save>Opslaan</button>
+          <button class="consent-btn consent-btn--ghost" type="button" data-consent-close>Sluiten</button>
         </div>
       </div>
     </div>

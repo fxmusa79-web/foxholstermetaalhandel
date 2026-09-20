@@ -65,6 +65,7 @@
   --logo-mark-size: 3.35rem;
 
   --transition: 160ms ease;
+  --cookie-height: 0px;
   --consent-banner-space: 0px;
   --floating-contact-right: 1.25rem;
   --floating-contact-bottom-offset: calc(1.25rem + env(safe-area-inset-bottom, 0px) + var(--consent-banner-space));
