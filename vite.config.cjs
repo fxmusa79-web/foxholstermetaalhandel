@@ -1,15 +1,19 @@
-import { defineConfig } from 'vite'
+const { defineConfig } = require('vite')
 
 /**
- * Multi-page Vite config.
- * Each public HTML page is an explicit Rollup input so `npm run build`
- * emits all routes under /pages/...
+ * Multi-page Vite config (CommonJS on purpose).
  *
- * Production: `npm run build` then `npx wrangler deploy --config wrangler.jsonc --autoconfig=false`
- * (Workers Static Assets from ./dist). Keep this file parse-simple: Wrangler
- * autoconfig uses a limited JS parser and chokes on import.meta / node:path.
+ * Wrangler autoconfig uses a limited parser on vite.config.js and throws:
+ *   Error parsing file: .../vite.config.js
+ * when it sees ESM `import` / `export`. This file is vite.config.cjs so:
+ * - Vite still loads it
+ * - Wrangler does not try to parse a vite.config.js
+ *
+ * Production: npm run build, then wrangler deploy --autoconfig=false
+ * (Workers Static Assets from ./dist). Do not pass --config on Windows;
+ * Wrangler doubles the absolute path.
  */
-export default defineConfig({
+module.exports = defineConfig({
   appType: 'mpa',
   build: {
     rollupOptions: {
