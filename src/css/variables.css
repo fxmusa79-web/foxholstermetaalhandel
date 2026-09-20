@@ -1,22 +1,28 @@
 :root {
-  /* Industrial palette */
-  --color-charcoal: #17191a;
-  --color-charcoal-soft: #202325;
+  /* Foxholster Metaalhandel — matched to the real logo */
+  --color-brand-red: #f20d0d;
+  --color-brand-red-dark: #c90000;
+  --color-brand-red-pressed: #a40000;
+  --color-brand-blue: #1230d8;
+  --color-black: #070708;
+  --color-charcoal: #151617;
+  --color-charcoal-soft: #202224;
   --color-charcoal-mid: #2a2e30;
   --color-steel: #62686b;
   --color-steel-soft: #8a9093;
-  --color-ink: #1c1e1f;
+  --color-ink: #151617;
   --color-muted: #5c6164;
-  --color-surface: #f2f1ed;
+  --color-surface: #f3f2ee;
   --color-surface-strong: #e7e5de;
+  --color-header: #f7f6f2;
   --color-white: #ffffff;
-  --color-accent: #b85f32;
-  --color-accent-hover: #9c4f29;
-  --color-accent-pressed: #823f21;
-  --color-accent-soft: #f3e6dc;
+  --color-accent: var(--color-brand-red);
+  --color-accent-hover: var(--color-brand-red-dark);
+  --color-accent-pressed: var(--color-brand-red-pressed);
+  --color-accent-soft: #f8e4e4;
   --color-line: #d8d5ce;
   --color-line-strong: #c4c0b6;
-  --color-focus: #b85f32;
+  --color-focus: var(--color-brand-red);
   --color-error: #8b2e1f;
   --color-ok: #2f4a38;
 
@@ -51,25 +57,41 @@
   --shadow-soft: 0 1px 0 rgba(23, 25, 26, 0.04);
   --shadow-panel: 0 8px 24px rgba(23, 25, 26, 0.12);
 
-  --header-height: 4rem;
+  --header-height: 4.25rem;
   --topbar-height: 2.25rem;
   --container: 72rem;
   --gutter: 1rem;
+  --logo-full-width: 15.5rem;
+  --logo-mark-size: 3.35rem;
 
   --transition: 160ms ease;
 
   color-scheme: light;
 }
 
+@media (min-width: 700px) {
+  :root {
+    --header-height: 5.5rem;
+    --logo-full-width: 16.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   :root {
     --gutter: 1.5rem;
-    --header-height: 4.25rem;
   }
 }
 
 @media (min-width: 1180px) {
   :root {
     --gutter: 2rem;
+    --logo-full-width: 15.75rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --logo-full-width: 17.5rem;
+    --header-height: 5.75rem;
   }
 }

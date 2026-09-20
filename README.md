@@ -38,10 +38,18 @@ foxholster-metaalhandel/
 ├── vite.config.js
 ├── README.md
 ├── public/
-│   ├── favicon.svg          (temporary FM mark)
+│   ├── favicon.ico
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── apple-touch-icon.png
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   └── images/
+│       └── brand/
+│           ├── logo-header.png          (original, untouched)
+│           ├── favicon-and-icon.png     (original, untouched)
+│           ├── logo-header-web.webp
+│           └── icon-web.webp
 ├── src/
 │   ├── css/
 │   ├── js/
@@ -66,6 +74,8 @@ foxholster-metaalhandel/
 
 Shared chrome (topbar, header, mobile nav, footer, cookie UI) is injected by `src/js/components.js`. Page content and SEO tags live in each HTML file.
 
+Desktop header uses `logo-header-web.webp` (PNG fallback). Below 700px the compact brand mark `icon-web.webp` is shown. Original high-resolution PNGs stay untouched in `public/images/brand/`.
+
 ## Placeholders still required
 
 Replace these before go-live (also listed in `src/data/business.js`):
@@ -79,8 +89,6 @@ Replace these before go-live (also listed in `src/data/business.js`):
 - `[BTW-NUMMER]`
 - `[OPENINGSTIJDEN]`
 - `[PRODUCTIEDOMEIN]` — currently documented as `https://www.example.nl`
-- Real logo (header mark is a temporary **FM** block)
-- Final favicon (`public/favicon.svg` is temporary)
 - Real industrial photographs (current images are local SVG placeholders)
 - Google Business Profile URL, if applicable
 - Final legal texts (privacy, terms, cookies)

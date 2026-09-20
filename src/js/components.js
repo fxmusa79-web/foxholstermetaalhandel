@@ -48,12 +48,15 @@ export function headerHtml(page) {
   return `
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="brand" href="/">
-          <span class="brand__mark" aria-hidden="true">FM</span>
-          <span class="brand__text">
-            <span class="brand__name">${escapeHtml(business.companyName)}</span>
-            <span class="brand__place">Foxhol · Groningen</span>
-          </span>
+        <a class="brand" href="/" aria-label="Foxholster Metaalhandel - Home">
+          <picture class="brand__logo brand__logo--full">
+            <source type="image/webp" srcset="/images/brand/logo-header-web.webp" />
+            <img src="/images/brand/logo-header-web.png" width="870" height="290" alt="Foxholster Metaalhandel" />
+          </picture>
+          <picture class="brand__logo brand__logo--mark">
+            <source type="image/webp" srcset="/images/brand/icon-web.webp" />
+            <img src="/images/brand/icon-web.png" width="256" height="256" alt="" />
+          </picture>
         </a>
         <nav class="nav-desktop" aria-label="Hoofdnavigatie">
           ${navMarkup(page, 'nav-desktop__list')}
@@ -94,6 +97,11 @@ export function footerHtml() {
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
+          <a class="footer-logo" href="/" aria-label="Foxholster Metaalhandel - Home">
+            <span class="footer-logo__panel">
+              <img src="/images/brand/icon-web.png" width="256" height="256" alt="" />
+            </span>
+          </a>
           <h2>${escapeHtml(business.companyName)}</h2>
           <div class="footer-meta">
             <span>${escapeHtml(business.street)}</span>

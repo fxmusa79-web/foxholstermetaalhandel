@@ -88,8 +88,8 @@
 }
 
 .form-status--info {
-  border-color: #c9b29e;
-  background: #f7eee6;
+  border-color: var(--color-line-strong);
+  background: var(--color-header);
 }
 
 .form-panel {

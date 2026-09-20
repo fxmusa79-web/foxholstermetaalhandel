@@ -53,6 +53,14 @@
   .section {
     padding-block: 3.25rem;
   }
+
+  .brand__logo--full {
+    display: block;
+  }
+
+  .brand__logo--mark {
+    display: none;
+  }
 }
 
 @media (min-width: 900px) {
@@ -73,6 +81,7 @@
 @media (min-width: 1180px) {
   .nav-desktop {
     display: block;
+    flex: 1 1 auto;
   }
 
   .nav-toggle {
@@ -96,20 +105,12 @@
 /* Keep 1366px navigation from wrapping awkwardly. */
 @media (min-width: 1180px) and (max-width: 1439px) {
   .nav-desktop a {
-    padding-inline: 0.32rem;
-    font-size: 0.78rem;
-  }
-
-  .brand__place {
-    display: none;
+    padding-inline: 0.28rem;
+    font-size: 0.76rem;
   }
 }
 
 @media (max-width: 359px) {
-  .brand__place {
-    display: none;
-  }
-
   .topbar__tag {
     display: none;
   }

@@ -1,0 +1,24 @@
+[
+  {
+    "file": "public/images/brand/logo-header.png",
+    "canvas": "2172x724",
+    "visible": "2043x526",
+    "padding": {
+      "left": 70,
+      "top": 100,
+      "right": 59,
+      "bottom": 98
+    }
+  },
+  {
+    "file": "public/images/brand/favicon-and-icon.png",
+    "canvas": "1254x1254",
+    "visible": "816x797",
+    "padding": {
+      "left": 222,
+      "top": 218,
+      "right": 216,
+      "bottom": 239
+    }
+  }
+]

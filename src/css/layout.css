@@ -90,7 +90,7 @@
 }
 
 .page-hero .kicker {
-  color: #e0b89e;
+  color: #f3b4b4;
 }
 
 .page-hero .lead {
@@ -144,7 +144,7 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  background: var(--color-white);
+  background: var(--color-header);
   border-bottom: 1px solid var(--color-line);
 }
 
@@ -159,48 +159,42 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  text-decoration: none;
+  flex: 0 1 auto;
   min-width: 0;
+  text-decoration: none;
 }
 
 .brand:hover {
   color: inherit;
 }
 
-.brand__mark {
-  flex: 0 0 auto;
-  width: 2.15rem;
-  height: 2.15rem;
-  display: grid;
-  place-items: center;
-  background: var(--color-charcoal);
-  color: var(--color-white);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
+.brand__logo--full {
+  display: none;
 }
 
-.brand__text {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  line-height: 1.15;
+.brand__logo--full img {
+  display: block;
+  width: var(--logo-full-width);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
 }
 
-.brand__name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-charcoal);
+.brand__logo--mark {
+  display: block;
+  width: var(--logo-mark-size);
+  height: var(--logo-mark-size);
+  overflow: hidden;
 }
 
-.brand__place {
-  font-size: 0.72rem;
-  color: var(--color-steel);
+.brand__logo--mark img {
+  display: block;
+  width: 154%;
+  height: 154%;
+  max-width: none;
+  margin: -27%;
+  object-fit: contain;
 }
 
 .nav-desktop {
@@ -234,6 +228,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex: 0 0 auto;
 }
 
 .nav-toggle {
@@ -357,6 +352,39 @@
   justify-content: space-between;
   align-items: center;
   font-size: var(--text-sm);
+}
+
+.hero .kicker,
+.section--dark .kicker,
+.cta-band .kicker,
+.page-hero .kicker {
+  color: #f5b4b4;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  text-decoration: none;
+}
+
+.footer-logo:hover {
+  color: inherit;
+}
+
+.footer-logo__panel {
+  display: grid;
+  place-items: center;
+  width: 4.35rem;
+  height: 4.35rem;
+  padding: 0.4rem;
+  background: var(--color-header);
+  border: 1px solid #3a4043;
+}
+
+.footer-logo__panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .placeholder-note {
