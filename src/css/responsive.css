@@ -98,6 +98,11 @@
     grid-template-columns: 0.9fr 1.1fr;
   }
 
+  .photo-block--hero-yard img {
+    min-height: 22rem;
+    max-height: 32rem;
+  }
+
   .grid-2 {
     grid-template-columns: 1fr 1fr;
   }
