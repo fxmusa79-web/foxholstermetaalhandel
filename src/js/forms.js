@@ -15,8 +15,8 @@ import { materialSelectOptions } from '../data/materials.js'
  * Do not show a fake "verzonden" success state until a real backend exists.
  */
 
-const DEV_MESSAGE =
-  'De aanvraagmodule wordt technisch gekoppeld voordat de website live gaat. Er is nu geen backend actief; uw gegevens zijn niet verzonden.'
+const STATUS_MESSAGE =
+  'Het formulier is nog niet gekoppeld aan verzending. Uw gegevens zijn niet verzonden. Bel, WhatsApp of e-mail ons om de partij of vraag door te geven.'
 
 function fillMaterialSelects(root) {
   root.querySelectorAll('[data-material-options]').forEach((select) => {
@@ -116,9 +116,9 @@ export function initForms() {
 
       try {
         await submitToPlaceholder(payload)
-        showStatus(form, DEV_MESSAGE)
+        showStatus(form, STATUS_MESSAGE)
       } catch (error) {
-        showStatus(form, DEV_MESSAGE)
+        showStatus(form, STATUS_MESSAGE)
       } finally {
         if (submit) submit.disabled = false
       }

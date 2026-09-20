@@ -2,12 +2,9 @@
  * Central business details for Foxholster Metaalhandel.
  *
  * Confirmed contact, address, KvK and registration numbers live here.
- * Do not invent BTW, opening hours, geo coordinates, reviews or a production domain.
- *
- * PLACEHOLDER_DOMAIN is still used for canonical / Open Graph / sitemap URLs
- * until the live website domain is confirmed.
+ * Do not invent BTW, opening hours, geo coordinates or reviews.
  */
-export const PLACEHOLDER_DOMAIN = 'https://www.example.nl'
+export const SITE_ORIGIN = 'https://foxholstermetaalhandel.nl'
 
 export const business = {
   companyName: 'Foxholster Metaalhandel',
@@ -25,8 +22,7 @@ export const business = {
   vat: '[BTW-NUMMER]',
   openingHours: '[OPENINGSTIJDEN]',
   availabilityNote: 'Neem contact op voor actuele bereikbaarheid.',
-  domain: '[PRODUCTIEDOMEIN]',
-  placeholderDomain: PLACEHOLDER_DOMAIN,
+  domain: SITE_ORIGIN,
   audience: 'Particulier & zakelijk',
   locationFocus: 'Foxhol en omgeving',
   experience: 'Meer dan 35 jaar',
@@ -95,7 +91,7 @@ export function formattedAddress() {
 }
 
 export function pageUrl(pathname = '/') {
-  const origin = PLACEHOLDER_DOMAIN.replace(/\/$/, '')
+  const origin = SITE_ORIGIN.replace(/\/$/, '')
   if (!pathname || pathname === '/') return `${origin}/`
   return `${origin}${pathname.startsWith('/') ? pathname : `/${pathname}`}`
 }

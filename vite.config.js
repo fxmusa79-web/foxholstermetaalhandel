@@ -9,7 +9,8 @@ const root = fileURLToPath(new URL('.', import.meta.url))
  * Each public HTML page is an explicit Rollup input so `npm run build`
  * emits all routes under /pages/...
  *
- * Cloudflare Pages / Workers are NOT configured yet.
+ * Production: `npm run build` then `npx wrangler deploy`
+ * (Workers Static Assets from ./dist).
  */
 export default defineConfig({
   appType: 'mpa',

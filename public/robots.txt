@@ -1,13 +1,6 @@
-# Foxholster Metaalhandel — ontwikkelrobots.txt
-#
-# Productiedomein is NOG NIET bekend.
-# Vervang https://www.example.nl/ door het echte domein vóór livegang.
-# Deze set blokkeert indexering tijdens ontwikkeling.
+# Foxholster Metaalhandel
 
 User-agent: *
-Disallow: /
+Allow: /
 
-# Na livegang, voorbeeld (pas aan):
-# User-agent: *
-# Allow: /
-# Sitemap: https://www.example.nl/sitemap.xml
+Sitemap: https://foxholstermetaalhandel.nl/sitemap.xml

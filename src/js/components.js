@@ -154,7 +154,7 @@ export function consentHtml() {
   return `
     <div class="consent-banner" data-consent-banner hidden>
       <div class="consent-banner__inner">
-        <p>We gebruiken noodzakelijke cookies voor de werking van de site. Analytics wordt pas geladen na toestemming en is in deze ontwikkelversie nog niet actief.</p>
+        <p>We gebruiken noodzakelijke cookies voor de werking van de site. Analytics wordt alleen geladen na toestemming en is op dit moment nog niet gekoppeld.</p>
         <div class="consent-actions">
           <button class="btn btn--outline btn--small" type="button" data-consent-necessary>Alleen noodzakelijk</button>
           <button class="btn btn--primary btn--small" type="button" data-consent-accept>Analytics toestaan</button>

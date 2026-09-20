@@ -1,12 +1,14 @@
 # Foxholster Metaalhandel
 
-Frontend foundation for the public website of **Foxholster Metaalhandel**, a Dutch metal trading and recycling company based around Foxhol and Groningen.
+Public website for **Foxholster Metaalhandel**, a Dutch metal trading and recycling company in Foxhol / Groningen.
 
-This is a local development project. It is not deployed, not connected to a backend, and the production domain is not configured.
+Production domain: `https://foxholstermetaalhandel.nl`
+
+The site is a Vite multi-page static frontend, deployed with Cloudflare Workers Static Assets. Contact and offer forms are visible but not yet connected to a backend (Resend / Turnstile are not configured).
 
 ## Purpose
 
-A production-ready HTML/CSS/JS starting point: industrial visual system, conversion-focused pages, Dutch copy, placeholders for real company data, and a frontend-only intake form.
+Industrial public website: Dutch copy, real company details and photographs, conversion-focused pages, and a frontend-only intake form until Resend/Turnstile are connected.
 
 ## Technology
 
@@ -25,7 +27,10 @@ npm install
 npm run dev
 npm run build
 npm run preview
+npm run deploy
 ```
+
+Cloudflare Workers Builds is configured to run `npm run build` then `npx wrangler deploy`.
 
 Development typically runs at `http://localhost:5173/` (use the URL Vite prints).
 
@@ -35,8 +40,9 @@ Development typically runs at `http://localhost:5173/` (use the URL Vite prints)
 foxholster-metaalhandel/
 ├── index.html
 ├── package.json
-├── vite.config.js
-├── README.md
+├── wrangler.jsonc
+├── worker/
+│   └── index.js
 ├── public/
 │   ├── favicon.ico
 │   ├── favicon-16x16.png
@@ -54,7 +60,7 @@ foxholster-metaalhandel/
 │   ├── css/
 │   ├── js/
 │   └── data/
-│       ├── business.js      (placeholders)
+│       ├── business.js
 │       ├── materials.js
 │       └── faqs.js
 └── pages/
@@ -76,76 +82,50 @@ Shared chrome (topbar, header, mobile nav, footer, cookie UI) is injected by `sr
 
 Desktop header uses `logo-header-web.webp` (PNG fallback). Below 700px the compact brand mark `icon-web.webp` is shown. Original high-resolution PNGs stay untouched in `public/images/brand/`.
 
-## Placeholders still required
+## Remaining placeholders
 
-Replace these before go-live (also listed in `src/data/business.js`):
+Confirmed contact, address, KvK and registrations are in `src/data/business.js`. Still not published because they are not supplied:
 
-- `[TELEFOONNUMMER]`
-- `[E-MAILADRES]`
-- `[ADRES]`
-- `[POSTCODE]`
-- `[PLAATS]`
-- `[KVK-NUMMER]`
 - `[BTW-NUMMER]`
 - `[OPENINGSTIJDEN]`
-- `[PRODUCTIEDOMEIN]` — currently documented as `https://www.example.nl`
-- Real industrial photographs (current images are local SVG placeholders)
 - Google Business Profile URL, if applicable
 - Final legal texts (privacy, terms, cookies)
-- Canonical / Open Graph / sitemap / JSON-LD URLs (all use `https://www.example.nl`)
 
-## Future integration (not configured)
+Canonical, Open Graph, sitemap and JSON-LD URLs use `https://foxholstermetaalhandel.nl`.
 
-The intake form in `src/js/forms.js` is prepared so a later Cloudflare Worker can replace `submitToPlaceholder()`.
+## Form and API backend (not configured)
 
-Intended later stack — **not created in this project**:
+Forms stay frontend-safe: they do not pretend to send mail. `worker/index.js` reserves `/api/*` and returns `501` until real credentials exist.
 
-- Cloudflare Worker endpoint
-- Resend for e-mail
+Later stack — **do not add secrets until they are supplied**:
+
+- Resend
 - Cloudflare Turnstile
+- optional R2 photo uploads
+- optional D1 lead storage
 
-Do not add `wrangler.toml`, API keys, secrets or fake endpoints until that work is explicitly started.
+## Deployment
 
-**Deployment is not configured.** No Cloudflare Pages project, DNS or production publish.
+GitHub repository: https://github.com/fxmusa79-web/foxholstermetaalhandel
 
-## GitHub
-
-Repository (source control only for now):
-
-https://github.com/fxmusa79-web/foxholstermetaalhandel
-
-Remote uses a dedicated SSH host alias and deploy key:
+Remote:
 
 `git@github-foxholstermetaalhandel:fxmusa79-web/foxholstermetaalhandel.git`
 
-## Intended infrastructure
+Cloudflare Workers Builds should run:
 
-Nothing below is configured yet except local development and the GitHub repository.
+1. `npm run build`
+2. `npx wrangler deploy`
+
+Worker name: `foxholstermetaalhandel`. Custom domain attachment stays in the Cloudflare dashboard so DNS is not duplicated from Wrangler.
 
 ```
-Local development (Vite)
+Vite build → dist/
         ↓
-Git repository (this folder)
+Cloudflare Workers Static Assets
         ↓
-GitHub (fxmusa79-web/foxholstermetaalhandel)
-        ↓
-Cloudflare deployment  ← NOT configured yet
+https://foxholstermetaalhandel.nl
 ```
-
-**Frontend:** Vite static site (`npm run build` → `dist/`)
-
-**Future backend (not implemented):** Cloudflare Worker / Workers for form handling.
-
-**Possible later services (do not create yet):**
-
-- Cloudflare Turnstile
-- Resend e-mail API
-- form handling
-- photo upload handling
-- analytics consent
-- Cloudflare storage only if actually required
-
-Do not add `wrangler.toml`, API keys, secrets or fake endpoints until that work is explicitly started.
 
 ## Fonts
 
@@ -153,4 +133,4 @@ Barlow Condensed and IBM Plex Sans are loaded from Google Fonts via `src/css/bas
 
 ## Robots and sitemap
 
-`robots.txt` currently disallows all crawlers (development). `sitemap.xml` lists public routes under the placeholder domain. Both must be updated when the real domain is known.
+`robots.txt` allows crawling and points to `https://foxholstermetaalhandel.nl/sitemap.xml`. Public page URLs live under `/pages/...`.
