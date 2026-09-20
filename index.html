@@ -91,6 +91,7 @@
             decoding="async"
           />
         </picture>
+        <div class="hero__grain" aria-hidden="true"></div>
         <div class="container">
           <div class="hero__content">
             <p class="kicker">METAALHANDEL • FOXHOL / GRONINGEN</p>
@@ -104,6 +105,10 @@
             </div>
           </div>
         </div>
+        <a class="hero__scroll" href="#aanbieden">
+          <span>Verder</span>
+          <span class="hero__scroll-bar" aria-hidden="true"></span>
+        </a>
       </section>
 
       <section class="usp-strip" aria-label="Kenmerken">
@@ -122,8 +127,12 @@
         <div class="container split">
           <div>
             <p class="kicker">Foxhol</p>
-            <h2>Meer dan 35 jaar ervaring in metaalhandel</h2>
-            <p class="lead">Foxholster Metaalhandel is al meer dan 35 jaar actief in Foxhol. We kopen metalen, kabels en bruikbare materialen in van particulieren en bedrijven en voeren daarnaast verschillende sloop- en verwerkingswerkzaamheden uit.</p>
+            <div class="years-mark">
+              <strong>35+</strong>
+              <span>jaar ervaring</span>
+            </div>
+            <h2>Al meer dan 35 jaar actief in metaalhandel</h2>
+            <p class="lead">Al meer dan 35 jaar actief in metaalhandel, kabelverwerking en sloopwerk vanuit Foxhol. We kopen metalen, kabels en bruikbare materialen in van particulieren en bedrijven.</p>
             <p>Een partij koper, kabels, oud ijzer of machines aanbieden? Neem contact op of stuur foto's. We bekijken om wat voor materiaal en hoeveelheid het gaat en bespreken vervolgens wat praktisch mogelijk is.</p>
           </div>
           <figure class="photo-block photo-block--cover photo-block--portrait photo-block--yard">
@@ -136,98 +145,79 @@
         </div>
       </section>
 
-      <section class="section section--muted" data-reveal>
-        <div class="container">
+      <section class="section section--muted" id="aanbieden" data-reveal>
+        <div class="container picker" data-picker>
           <div class="section-head">
-            <p class="kicker">Materialen</p>
-            <h2>Wat u kunt aanbieden</h2>
-            <p class="lead">Veelvoorkomende stromen. Inname volgt na beoordeling van soort, hoeveelheid en staat. Geen prijzen of garanties vooraf.</p>
+            <p class="kicker">Aanmelden</p>
+            <h2>Wat wilt u aanbieden?</h2>
+            <p class="lead">Kies een materiaal. Daarna volgt een korte toelichting en de weg naar het aanmeldformulier. Inname is altijd na beoordeling.</p>
           </div>
-          <div class="grid-5">
-            <a class="material-item" href="/pages/materialen/#ferro">
-              <div class="material-item__visual"><img src="/images/materials/ferro.svg" alt="" width="320" height="180" /></div>
-              <h3>Ferro</h3>
-              <p>IJzerhoudend schroot en staal.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#non-ferro">
-              <div class="material-item__visual"><img src="/images/materials/non-ferro.svg" alt="" width="320" height="180" /></div>
-              <h3>Non-ferro</h3>
-              <p>Koper, aluminium, RVS en messing.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#kabels">
-              <div class="material-item__visual"><img src="/images/materials/kabels.svg" alt="" width="320" height="180" /></div>
-              <h3>Kabels</h3>
-              <p>Koperkabels en overige kabelpartijen.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#koper">
-              <div class="material-item__visual"><img src="/images/materials/koper.svg" alt="" width="320" height="180" /></div>
-              <h3>Koper</h3>
-              <p>Leidingen, draad, plaat en restpartijen.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#aluminium">
-              <div class="material-item__visual"><img src="/images/materials/aluminium.svg" alt="" width="320" height="180" /></div>
-              <h3>Aluminium</h3>
-              <p>Profielen, plaat en productieresten.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#rvs">
-              <div class="material-item__visual"><img src="/images/materials/rvs.svg" alt="" width="320" height="180" /></div>
-              <h3>RVS</h3>
-              <p>Roestvast staal uit industrie of sloop.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#messing">
-              <div class="material-item__visual"><img src="/images/materials/messing.svg" alt="" width="320" height="180" /></div>
-              <h3>Messing</h3>
-              <p>Fittingen, kranen, staven en restmateriaal.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#motoren">
-              <div class="material-item__visual"><img src="/images/materials/motoren.svg" alt="" width="320" height="180" /></div>
-              <h3>Motoren</h3>
-              <p>Elektromotoren en vergelijkbare units.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#machines">
-              <div class="material-item__visual"><img src="/images/materials/machines.svg" alt="" width="320" height="180" /></div>
-              <h3>Machines</h3>
-              <p>Afgeschreven machines en installaties.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#transformatoren">
-              <div class="material-item__visual"><img src="/images/materials/transformatoren.svg" alt="" width="320" height="180" /></div>
-              <h3>Transformatoren</h3>
-              <p>Beoordeling per type, locatie en staat.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#accus">
-              <div class="material-item__visual"><img src="/images/materials/ferro.svg" alt="" width="320" height="180" /></div>
-              <h3>Accu's</h3>
-              <p>Inname van gebruikte accu's na overleg.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
-            <a class="material-item" href="/pages/materialen/#grondkabels">
-              <div class="material-item__visual"><img src="/images/materials/kabels.svg" alt="" width="320" height="180" /></div>
-              <h3>Grondkabels</h3>
-              <p>Beoordeling en verwerking van kabelpartijen.</p>
-              <span class="material-item__link">Bekijk</span>
-            </a>
+          <div class="picker-grid" role="group" aria-label="Materiaalsoorten">
+            <button class="picker-item" type="button" data-pick="koper" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>
+              Koper
+            </button>
+            <button class="picker-item" type="button" data-pick="kabels" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16c4-10 12 10 16 0"/><path d="M4 10c4-8 12 8 16 0"/></svg>
+              Kabels
+            </button>
+            <button class="picker-item" type="button" data-pick="aluminium" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M6 18V8l6-3 6 3v10"/></svg>
+              Aluminium
+            </button>
+            <button class="picker-item" type="button" data-pick="rvs" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="12"/><path d="M4 10h16"/></svg>
+              RVS
+            </button>
+            <button class="picker-item" type="button" data-pick="messing" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="3"/><circle cx="16" cy="12" r="3"/><path d="M11 12h2"/></svg>
+              Messing
+            </button>
+            <button class="picker-item" type="button" data-pick="ferro" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18V8h4l2-3h8v13"/></svg>
+              IJzer / ferro
+            </button>
+            <button class="picker-item" type="button" data-pick="accus" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="11"/><path d="M9 8V6h6v2M10 13h4"/></svg>
+              Accu's
+            </button>
+            <button class="picker-item" type="button" data-pick="grondkabels" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7v10M9 5v14M15 6v12M19 8v8"/></svg>
+              Grondkabels
+            </button>
+            <button class="picker-item" type="button" data-pick="motoren" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="5"/><path d="M12 8V5h4"/></svg>
+              Motoren
+            </button>
+            <button class="picker-item" type="button" data-pick="machines" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="10" width="14" height="8"/><path d="M17 14h4v4h-4M8 10V7h6v3"/></svg>
+              Machines
+            </button>
+            <button class="picker-item" type="button" data-pick="anders" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>
+              Anders
+            </button>
           </div>
+          <div class="picker-panel" data-picker-panel hidden>
+            <h3 data-picker-title>Materiaal</h3>
+            <p data-picker-copy></p>
+            <p class="u-mt-lg"><a class="btn btn--primary" data-picker-cta href="/pages/metaal-aanbieden/">Aanbieden</a></p>
+          </div>
+          <p class="u-mt-md"><a href="/pages/materialen/">Volledig materiaaloverzicht</a></p>
         </div>
       </section>
 
-      <section class="section" data-reveal>
-        <div class="container split">
-          <div>
+      <section class="section process-block" data-process>
+        <svg class="cable-line" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+          <path pathLength="1" d="M-20 92 C 160 18, 310 148, 520 78 S 860 18, 1220 104" />
+        </svg>
+        <div class="container">
+          <div class="section-head">
             <p class="kicker">Werkwijze</p>
-            <h2>Hoe het werkt</h2>
+            <h2>Zo werkt het</h2>
             <p class="lead">U meldt een partij aan, wij beoordelen de informatie en spreken af hoe de partij wordt gebracht of, als dat past, bekeken of opgehaald.</p>
           </div>
-          <ol class="process">
+          <ol class="process-line">
             <li>
               <div>
                 <h3>Aanmelden</h3>
@@ -248,13 +238,13 @@
             </li>
             <li>
               <div>
-                <h3>Brengen of ophalen</h3>
+                <h3>Brengen / ophalen</h3>
                 <p>Kleine partijen worden in de regel gebracht. Ophalen kan alleen bij geschikte grotere partijen.</p>
               </div>
             </li>
             <li>
               <div>
-                <h3>Sorteren en verwerken</h3>
+                <h3>Verwerking</h3>
                 <p>Materiaalstromen worden gescheiden. Afspraken daarover volgen uit de beoordeling.</p>
               </div>
             </li>
@@ -266,8 +256,8 @@
         <div class="container practice" data-gallery>
           <div class="section-head">
             <p class="kicker">Locatie Foxhol</p>
-            <h2>Dagelijks werk in Foxhol</h2>
-            <p class="lead">Van kabels en koper tot machines, sloopwerk en grotere metaalpartijen. Een deel van het dagelijkse werk gebeurt direct op onze locatie in Foxhol.</p>
+            <h2>Werk uit de praktijk</h2>
+            <p class="lead">Een indruk van het dagelijkse werk op onze locatie in Foxhol: van kabelverwerking en metaalinkoop tot sloopwerk en grotere partijen.</p>
           </div>
           <div class="practice-track" data-gallery-track>
             <figure class="practice-slide practice-slide--people" data-gallery-slide>
@@ -298,17 +288,10 @@
               </picture>
               <figcaption>Grotere metaalconstructies en projecten.</figcaption>
             </figure>
-            <figure class="practice-slide practice-slide--materials" data-gallery-slide>
-              <picture>
-                <source type="image/webp" srcset="/images/company/foxholster-werkplaats-metaalschroot-binnen.webp" />
-                <img src="/images/company/foxholster-werkplaats-metaalschroot-binnen.jpg" alt="Metaalschroot in de werkplaats in Foxhol" width="1280" height="960" loading="lazy" />
-              </picture>
-              <figcaption>Scheiden en verwerken in de werkplaats.</figcaption>
-            </figure>
           </div>
           <div class="practice-controls">
             <div class="practice-dots" data-gallery-dots></div>
-            <span class="practice-status" data-gallery-status>1 / 5</span>
+            <span class="practice-status" data-gallery-status>1 / 4</span>
             <div class="practice-nav">
               <button type="button" data-gallery-prev aria-label="Vorige foto">‹</button>
               <button type="button" data-gallery-next aria-label="Volgende foto">›</button>
@@ -318,40 +301,22 @@
       </section>
 
       <section class="section section--dark" data-reveal>
-        <div class="container split">
-          <div>
-            <p class="kicker">Kabels &amp; koper</p>
-            <h2>Verwerking van kabels en koper</h2>
-            <p>Dagelijks verwerken we verschillende soorten metalen en kabels op onze locatie in Foxhol. Koper, kabels en grondkabels kunnen worden aangeboden; we kijken eerst naar soort, hoeveelheid en staat.</p>
-            <p>Ook grotere partijen, machines en grondkabels kunnen worden beoordeeld. Neem bij twijfel contact op of stuur foto's van de partij.</p>
-            <p class="u-mt-lg"><a class="btn btn--primary" href="/pages/materialen/#kabels">Kabels en koper</a></p>
-          </div>
-          <figure class="photo-block photo-block--cover photo-block--people">
-            <picture>
-              <source type="image/webp" srcset="/images/company/foxholster-koperverwerking-kabels-medewerkers.webp" />
-              <img src="/images/company/foxholster-koperverwerking-kabels-medewerkers.jpg" alt="Koper en kabels worden verwerkt op het bedrijfsterrein" width="1280" height="960" loading="lazy" />
-            </picture>
-            <figcaption>Dagelijks verwerken we verschillende soorten metalen en kabels op onze locatie in Foxhol.</figcaption>
-          </figure>
+        <div class="container">
+          <p class="kicker">Kabels &amp; koper</p>
+          <h2>Verwerking van kabels en koper</h2>
+          <p class="lead">Dagelijks verwerken we verschillende soorten metalen en kabels op onze locatie in Foxhol. Koper, kabels en grondkabels kunnen worden aangeboden; we kijken eerst naar soort, hoeveelheid en staat.</p>
+          <p>Ook grotere partijen, machines en grondkabels kunnen worden beoordeeld. Neem bij twijfel contact op of stuur foto's van de partij.</p>
+          <p class="u-mt-lg"><a class="btn btn--primary" href="/pages/materialen/#kabels">Kabels en koper</a></p>
         </div>
       </section>
 
       <section class="section section--muted" data-reveal>
-        <div class="container split split--reverse">
-          <figure class="photo-block photo-block--cover">
-            <picture>
-              <source type="image/webp" srcset="/images/company/foxholster-demontage-metaal-snijwerk.webp" />
-              <img src="/images/company/foxholster-demontage-metaal-snijwerk.jpg" alt="Metaaldemontage bij Foxholster Metaalhandel" width="1280" height="960" loading="lazy" />
-            </picture>
-            <figcaption>Bij sloop- en demontagewerk kijken we vooraf naar bereikbaarheid, hoeveelheid en verwerking.</figcaption>
-          </figure>
-          <div>
-            <p class="kicker">Sloop / demontage</p>
-            <h2>Sloop- en demontagewerk</h2>
-            <p>Bij metalen installaties, machines en constructies kan ook sloop- of demontagewerk worden besproken. We beoordelen vooraf de situatie, bereikbaarheid en hoeveelheid materiaal.</p>
-            <p>Ophalen is mogelijk, niet vanzelfsprekend. Kleine of lastig bereikbare partijen worden in de regel gebracht na afspraak.</p>
-            <p class="u-mt-lg"><a class="btn btn--outline" href="/pages/ophalen-demontage/">Ophalen en demontage</a></p>
-          </div>
+        <div class="container">
+          <p class="kicker">Sloop / demontage</p>
+          <h2>Sloop- en demontagewerk</h2>
+          <p class="lead">Bij metalen installaties, machines en constructies kan ook sloop- of demontagewerk worden besproken. We beoordelen vooraf de situatie, bereikbaarheid en hoeveelheid materiaal.</p>
+          <p>Ophalen is mogelijk, niet vanzelfsprekend. Kleine of lastig bereikbare partijen worden in de regel gebracht na afspraak.</p>
+          <p class="u-mt-lg"><a class="btn btn--outline" href="/pages/ophalen-demontage/">Ophalen en demontage</a></p>
         </div>
       </section>
 
@@ -415,7 +380,7 @@
         </div>
       </section>
 
-      <section class="section" data-reveal>
+      <section class="section section--dark" data-reveal>
         <div class="container">
           <div class="section-head">
             <p class="kicker">Vertrouwen</p>

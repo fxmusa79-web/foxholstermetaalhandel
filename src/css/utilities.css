@@ -46,8 +46,8 @@
 
 .js-ready [data-reveal] {
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 420ms ease, transform 420ms ease;
+  transform: translateY(14px);
+  transition: opacity 520ms ease, transform 520ms ease;
 }
 
 .js-ready [data-reveal].is-visible {
@@ -56,6 +56,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .cable-line,
+  .process-line::after,
+  .hero__scroll-bar {
+    display: none;
+  }
+
   .js-ready [data-reveal] {
     opacity: 1;
     transform: none;

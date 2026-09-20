@@ -79,9 +79,11 @@
 }
 
 .page-hero {
-  padding-block: var(--space-xl);
+  min-height: 15.5rem;
+  padding-block: 2.55rem 2.8rem;
   background: var(--color-charcoal);
   color: var(--color-surface);
+  overflow: hidden;
 }
 
 .page-hero h1,
@@ -95,6 +97,7 @@
 
 .page-hero .lead {
   color: #cfcbc3;
+  max-width: 40rem;
 }
 
 .site-main {
@@ -381,6 +384,7 @@
 
 .photo-block {
   margin: 0;
+  overflow: hidden;
 }
 
 .photo-block img {

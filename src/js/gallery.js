@@ -1,5 +1,5 @@
-const INTERVAL = 5200
-const RESUME_DELAY = 8000
+const INTERVAL = 5000
+const RESUME_DELAY = 10000
 
 export function initGalleries() {
   document.querySelectorAll('[data-gallery]').forEach(initGallery)

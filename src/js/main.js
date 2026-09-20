@@ -5,6 +5,7 @@ import '../css/layout.css'
 import '../css/components.css'
 import '../css/forms.css'
 import '../css/utilities.css'
+import '../css/animations.css'
 import '../css/responsive.css'
 
 import { mountChrome } from './components.js'
@@ -14,6 +15,7 @@ import { initConsent } from './consent.js'
 import { initAnimations } from './animations.js'
 import { initGalleries } from './gallery.js'
 import { initContactWidget } from './contact-widget.js'
+import { initMaterialPicker } from './picker.js'
 
 document.documentElement.classList.add('js-ready')
 
@@ -26,3 +28,4 @@ initConsent()
 initAnimations()
 initGalleries()
 initContactWidget()
+initMaterialPicker()

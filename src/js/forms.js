@@ -37,7 +37,15 @@ function fillMaterialSelects(root) {
       select.append(option)
     })
     select.dataset.filled = 'true'
+    applyMaterialQuery(select)
   })
+}
+
+function applyMaterialQuery(select) {
+  const value = new URLSearchParams(window.location.search).get('materiaal')
+  if (!value) return
+  const exists = [...select.options].some((option) => option.value === value)
+  if (exists) select.value = value
 }
 
 function setFieldError(field, message) {
