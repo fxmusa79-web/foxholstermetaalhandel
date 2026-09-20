@@ -3,11 +3,10 @@ import {
   navItems,
   primaryCta,
   legalLinks,
-  serviceLinks,
+  footerServices,
   phoneHref,
   emailHref,
 } from '../data/business.js'
-import { materials, materialHref } from '../data/materials.js'
 
 function escapeHtml(value) {
   return String(value)
@@ -83,16 +82,15 @@ export function headerHtml(page) {
         <p class="u-mt-lg">
           <a class="btn btn--primary" href="${primaryCta.href}">${escapeHtml(primaryCta.label)}</a>
         </p>
+        <p class="u-mt-sm">
+          <a class="btn btn--outline" href="${phoneHref()}">Bel direct</a>
+        </p>
       </div>
     </div>
   `
 }
 
 export function footerHtml() {
-  const materialLinks = materials
-    .map((item) => `<li><a href="${materialHref(item.slug)}">${escapeHtml(item.name)}</a></li>`)
-    .join('')
-
   return `
     <footer class="site-footer">
       <div class="container footer-grid">
@@ -103,15 +101,26 @@ export function footerHtml() {
             </span>
           </a>
           <h2>${escapeHtml(business.companyName)}</h2>
+          <p>${escapeHtml(business.experienceIntro)}</p>
+        </div>
+        <div>
+          <h2>Contact</h2>
           <div class="footer-meta">
             <span>${escapeHtml(business.street)}</span>
             <span>${escapeHtml(business.postalCode)} ${escapeHtml(business.city)}</span>
             <a href="${phoneHref()}">${escapeHtml(business.phone)}</a>
             <a href="${emailHref()}">${escapeHtml(business.email)}</a>
-            <span>KvK: ${escapeHtml(business.kvk)}</span>
-            <span>BTW: ${escapeHtml(business.vat)}</span>
           </div>
-          <span class="placeholder-note">Bedrijfsgegevens: placeholders tot livegang</span>
+          <div class="footer-meta footer-meta--sub">
+            <span>Privé: <a href="${phoneHref(business.privatePhone)}">${escapeHtml(business.privatePhone)}</a></span>
+            <span>B.g.g.: <a href="${phoneHref(business.mobileFallback)}">${escapeHtml(business.mobileFallback)}</a></span>
+          </div>
+        </div>
+        <div>
+          <h2>Diensten</h2>
+          <ul class="footer-links">
+            ${footerServices.map((item) => `<li><a href="${item.href}">${escapeHtml(item.label)}</a></li>`).join('')}
+          </ul>
         </div>
         <div>
           <h2>Navigatie</h2>
@@ -119,25 +128,18 @@ export function footerHtml() {
             ${navItems.map((item) => `<li><a href="${item.href}">${escapeHtml(item.label)}</a></li>`).join('')}
           </ul>
         </div>
-        <div>
-          <h2>Diensten</h2>
-          <ul class="footer-links">
-            ${serviceLinks.map((item) => `<li><a href="${item.href}">${escapeHtml(item.label)}</a></li>`).join('')}
-            <li><a href="${primaryCta.href}">${escapeHtml(primaryCta.label)}</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Materialen</h2>
-          <ul class="footer-links">
-            ${materialLinks}
-          </ul>
-        </div>
       </div>
       <div class="container footer-bottom">
-        <div>
-          ${legalLinks.map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`).join(' · ')}
+        <ul class="footer-reg">
+          <li>KvK: ${escapeHtml(business.kvk)}</li>
+          <li>Inzamel nr.: ${escapeHtml(business.collectionNumber)}</li>
+          <li>BE/verwerker: ${escapeHtml(business.processorNumber)}</li>
+          <li>VIHB: ${escapeHtml(business.vihb)}</li>
+        </ul>
+        <div class="footer-legal">
+          ${legalLinks.map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`).join('')}
+          <button class="cookie-settings" type="button" data-consent-open>Cookie-instellingen</button>
         </div>
-        <button class="cookie-settings" type="button" data-consent-open>Cookie-instellingen</button>
       </div>
     </footer>
   `

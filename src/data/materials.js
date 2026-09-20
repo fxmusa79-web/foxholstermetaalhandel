@@ -94,6 +94,33 @@ export const materials = [
     examples: ['Distributietransformatoren', 'Industriële transformatoren'],
     image: '/images/materials/transformatoren.svg',
   },
+  {
+    slug: 'accus',
+    name: "Inname accu's",
+    short: "Gebruikte accu's kunnen worden aangeboden, na doorgeven van type en hoeveelheid.",
+    description:
+      "Ook voor de inname van gebruikte accu's kunt u contact opnemen. Geef bij grotere aantallen vooraf door om welk type en welke hoeveelheid het gaat. Neem bij twijfel contact op of stuur foto's van de partij.",
+    examples: ["Startaccu's", 'Accu-partijen', 'Grotere aantallen na overleg'],
+    image: '/images/materials/ferro.svg',
+  },
+  {
+    slug: 'grondkabels',
+    name: 'Grondkabels',
+    short: 'Grondkabels en grotere kabelpartijen voor beoordeling en verwerking.',
+    description:
+      'Grondkabels en grotere kabelpartijen kunnen worden aangeboden voor beoordeling en verwerking. Stuur bij grotere partijen bij voorkeur foto’s en informatie over hoeveelheid en bereikbaarheid. Inname volgt na beoordeling.',
+    examples: ['Grondkabel', 'Grotere kabelpartijen', 'Gemengde kabelstromen'],
+    image: '/images/materials/kabels.svg',
+  },
+  {
+    slug: 'bruikbare-materialen',
+    name: 'Bruikbare materialen',
+    short: 'Naast metaal ook bruikbare materialen, altijd na beoordeling van de partij.',
+    description:
+      'Naast metalen en kabels kijken we ook naar bruikbare materialen. Wat past, hangt af van soort, hoeveelheid en staat. Stuur foto’s mee of neem contact op als u twijfelt of iets kan worden aangeboden.',
+    examples: ['Herbruikbare restpartijen', 'Materialen naast metaal, na beoordeling'],
+    image: '/images/materials/non-ferro.svg',
+  },
 ]
 
 export const materialSelectOptions = [
@@ -106,6 +133,10 @@ export const materialSelectOptions = [
   { value: 'motoren', label: 'Motoren' },
   { value: 'machines', label: 'Machines' },
   { value: 'transformatoren', label: 'Transformatoren' },
+  { value: 'accus', label: "Accu's" },
+  { value: 'grondkabels', label: 'Grondkabels' },
+  { value: 'bruikbare-materialen', label: 'Bruikbare materialen' },
+  { value: 'sloopwerken', label: 'Sloop / demontage' },
   { value: 'gemengd', label: 'Gemengde partij' },
   { value: 'anders', label: 'Anders' },
 ]

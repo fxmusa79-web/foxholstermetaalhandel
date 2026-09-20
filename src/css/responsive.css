@@ -36,7 +36,7 @@
   }
 
   .footer-grid {
-    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .section {
@@ -152,6 +152,22 @@
 
   .hero > .container {
     width: min(100% - (var(--gutter) * 2), var(--container));
+  }
+}
+
+@media (min-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: 1.35fr 1fr 0.95fr 0.95fr;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+  }
+
+  .footer-reg {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.25rem;
   }
 }
 

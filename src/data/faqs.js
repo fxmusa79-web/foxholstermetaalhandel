@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: 'Welke metalen kan ik aanbieden?',
     answer:
-      'U kunt onder meer ferro, non-ferro, kabels, koper, aluminium, RVS, messing, motoren, machines en transformatoren aanbieden. Of een specifieke partij wordt ingenomen, hangt af van soort, hoeveelheid, staat, vervuiling en verwerking. Stuur foto’s en een korte omschrijving mee.',
+      'U kunt onder meer ferro, non-ferro, kabels, koper, aluminium, RVS, messing, motoren, machines, transformatoren, accu’s, grondkabels en bruikbare materialen aanbieden. Of een specifieke partij wordt ingenomen, hangt af van soort, hoeveelheid, staat, vervuiling en verwerking. Stuur foto’s en een korte omschrijving mee.',
   },
   {
     question: 'Kopen jullie ook kabels en koper in?',
@@ -28,5 +28,10 @@ export const faqs = [
     question: 'Wat moet ik meesturen voor een beoordeling?',
     answer:
       'Foto’s van de partij, het type materiaal, een geschatte hoeveelheid, postcode of plaats, en of het om brengen of een mogelijke ophaalvraag gaat. Bij machines, motoren of transformatoren: typegegevens, bereikbaarheid en of demontage of hijsen nodig is.',
+  },
+  {
+    question: 'Nemen jullie ook accu’s en grondkabels in?',
+    answer:
+      'Ja, accu’s en grondkabels kunnen worden aangeboden. Geef bij grotere aantallen accu’s type en hoeveelheid door. Bij grondkabels of grotere kabelpartijen stuur je bij voorkeur foto’s plus informatie over hoeveelheid en bereikbaarheid. Neem bij twijfel contact op.',
   },
 ]

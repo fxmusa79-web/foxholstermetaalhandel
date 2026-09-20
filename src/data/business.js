@@ -1,31 +1,41 @@
 /**
  * Central business details for Foxholster Metaalhandel.
  *
- * Replace every [PLACEHOLDER] before production.
- * Do not invent telephone numbers, addresses, KvK, BTW or opening hours.
+ * Confirmed contact, address, KvK and registration numbers live here.
+ * Do not invent BTW, opening hours, geo coordinates, reviews or a production domain.
  *
- * PLACEHOLDER_DOMAIN must be replaced with the real production domain.
- * Sitemap, canonical URLs, Open Graph URLs and JSON-LD currently use this value.
+ * PLACEHOLDER_DOMAIN is still used for canonical / Open Graph / sitemap URLs
+ * until the live website domain is confirmed.
  */
 export const PLACEHOLDER_DOMAIN = 'https://www.example.nl'
 
 export const business = {
   companyName: 'Foxholster Metaalhandel',
   shortName: 'Foxholster',
-  phone: '[TELEFOONNUMMER]',
-  email: '[E-MAILADRES]',
-  street: '[ADRES]',
-  postalCode: '[POSTCODE]',
-  city: '[PLAATS]',
+  phone: '0598-394504',
+  privatePhone: '0598-380686',
+  mobileFallback: '06-50565966',
+  email: 'info@foxholstermetaalhandel.nl',
+  street: 'G. Imbosstraat 60',
+  postalCode: '9607 PE',
+  city: 'Foxhol',
   region: 'Groningen',
   country: 'NL',
-  kvk: '[KVK-NUMMER]',
+  kvk: '02326351',
   vat: '[BTW-NUMMER]',
   openingHours: '[OPENINGSTIJDEN]',
+  availabilityNote: 'Neem contact op voor actuele bereikbaarheid.',
   domain: '[PRODUCTIEDOMEIN]',
   placeholderDomain: PLACEHOLDER_DOMAIN,
   audience: 'Particulier & zakelijk',
   locationFocus: 'Foxhol en omgeving',
+  experience: 'Meer dan 35 jaar',
+  experienceLine: 'Meer dan 35 jaar ervaring',
+  experienceIntro:
+    'Al meer dan 35 jaar actief in de in- en verkoop van metalen, kabels en bruikbare materialen vanuit Foxhol.',
+  collectionNumber: '01.853',
+  processorNumber: '0.1V',
+  vihb: 'GR 5-3716',
 }
 
 export const navItems = [
@@ -45,26 +55,34 @@ export const primaryCta = {
 }
 
 export const legalLinks = [
-  { id: 'privacybeleid', label: 'Privacybeleid', href: '/pages/privacybeleid/' },
+  { id: 'privacybeleid', label: 'Privacy', href: '/pages/privacybeleid/' },
   { id: 'algemene-voorwaarden', label: 'Algemene voorwaarden', href: '/pages/algemene-voorwaarden/' },
   { id: 'cookiebeleid', label: 'Cookiebeleid', href: '/pages/cookiebeleid/' },
 ]
 
-export const serviceLinks = [
+export const footerServices = [
   { label: 'Metaal inkoop', href: '/pages/metaal-inkoop/' },
+  { label: 'Kabels', href: '/pages/materialen/#kabels' },
+  { label: 'Koper', href: '/pages/materialen/#koper' },
+  { label: 'Machines', href: '/pages/materialen/#machines' },
+  { label: "Accu's", href: '/pages/materialen/#accus' },
+  { label: 'Grondkabels', href: '/pages/materialen/#grondkabels' },
+  { label: 'Sloopwerken', href: '/pages/ophalen-demontage/' },
   { label: 'Zakelijk', href: '/pages/zakelijk/' },
-  { label: 'Ophalen / demontage', href: '/pages/ophalen-demontage/' },
-  { label: 'Werkgebied', href: '/pages/werkgebied/' },
-  { label: 'Contact', href: '/pages/contact/' },
 ]
+
+export const serviceLinks = footerServices
 
 export function isPlaceholder(value) {
   return typeof value === 'string' && value.includes('[')
 }
 
-export function phoneHref() {
-  if (isPlaceholder(business.phone)) return '/pages/contact/'
-  return `tel:${business.phone.replace(/\s+/g, '')}`
+export function phoneHref(number = business.phone) {
+  if (isPlaceholder(number)) return '/pages/contact/'
+  const digits = String(number).replace(/\D/g, '')
+  if (!digits) return '/pages/contact/'
+  if (digits.startsWith('0')) return `tel:+31${digits.slice(1)}`
+  return `tel:+${digits}`
 }
 
 export function emailHref() {

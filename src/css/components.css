@@ -427,27 +427,14 @@
   margin-bottom: 0.5rem;
 }
 
-.contact-facts {
-  display: grid;
-  gap: 0.75rem;
-  margin: 1.25rem 0;
+.material-block .photo-block {
+  margin: 1rem 0 1.1rem;
 }
 
-.contact-facts div {
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--color-line);
-}
-
-.contact-facts dt {
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-steel);
-}
-
-.contact-facts dd {
-  margin: 0.2rem 0 0;
-  font-weight: 600;
+.material-block .photo-block img {
+  max-height: 26rem;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .prose h2 {
