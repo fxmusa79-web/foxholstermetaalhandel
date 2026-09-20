@@ -39,6 +39,8 @@ module.exports = defineConfig({
         privacy: 'pages/privacybeleid/index.html',
         voorwaarden: 'pages/algemene-voorwaarden/index.html',
         cookies: 'pages/cookiebeleid/index.html',
+        disclaimer: 'pages/disclaimer/index.html',
+        notFound: '404.html',
       },
     },
   },

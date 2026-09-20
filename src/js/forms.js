@@ -1,9 +1,11 @@
 import { materialSelectOptions } from '../data/materials.js'
 
-const OFFER_STATUS_MESSAGE =
-  'Het formulier is nog niet gekoppeld aan verzending. Uw gegevens zijn niet verzonden. Bel, WhatsApp of e-mail ons om de partij of vraag door te geven.'
 const SEND_ERROR =
   'Het verzenden is niet gelukt. Probeer het opnieuw of neem direct contact op via 0598-394504.'
+const FILE_ERROR = 'Kies JPG, PNG, WebP of HEIC, maximaal 6 foto’s van 8 MB per bestand.'
+const MAX_FILES = 6
+const MAX_FILE_BYTES = 8 * 1024 * 1024
+const ALLOWED_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'])
 
 function fillMaterialSelects(root) {
   root.querySelectorAll('[data-material-options]').forEach((select) => {
@@ -44,6 +46,7 @@ function setFieldError(field, message) {
 function validateForm(form) {
   let ok = true
   form.querySelectorAll('[required]').forEach((field) => {
+    if (field.closest('[hidden]')) return
     let message = ''
     if (field.type === 'checkbox' && !field.checked) {
       message = 'Bevestig de privacyverklaring om verder te gaan.'
@@ -72,9 +75,10 @@ function showStatus(form, text, tone = 'info') {
 function setSubmitting(form, submitting) {
   const submit = form.querySelector('[type="submit"]')
   if (!submit) return
-  const label = submit.dataset.submitLabel || 'Verstuur bericht'
+  const label = submit.dataset.submitLabel || submit.textContent
+  if (!submit.dataset.submitLabel) submit.dataset.submitLabel = label
   submit.disabled = submitting
-  submit.textContent = submitting ? 'Bericht versturen...' : label
+  submit.textContent = submitting ? 'Bezig met verzenden...' : submit.dataset.submitLabel
 }
 
 async function loadTurnstile(form) {
@@ -113,6 +117,86 @@ function readTurnstileToken(form) {
   return field instanceof HTMLInputElement ? field.value : ''
 }
 
+function syncFileInput(input, files) {
+  const transfer = new DataTransfer()
+  files.forEach((file) => transfer.items.add(file))
+  input.files = transfer.files
+}
+
+function initPhotoField(form) {
+  const input = form.querySelector('[name="photos"]')
+  const list = form.querySelector('[data-photo-list]')
+  if (!input || !list) return
+
+  let files = []
+
+  const render = () => {
+    list.replaceChildren()
+    files.forEach((file, index) => {
+      const item = document.createElement('li')
+      item.className = 'photo-preview__item'
+      const thumb = document.createElement('span')
+      thumb.className = 'photo-preview__thumb'
+      if (file.type && file.type.startsWith('image/') && file.type !== 'image/heic' && file.type !== 'image/heif') {
+        const img = document.createElement('img')
+        img.alt = ''
+        img.src = URL.createObjectURL(file)
+        thumb.append(img)
+      } else {
+        thumb.textContent = 'Foto'
+      }
+      const meta = document.createElement('span')
+      meta.className = 'photo-preview__meta'
+      meta.textContent = `${file.name} (${Math.max(1, Math.round(file.size / 1024))} kB)`
+      const remove = document.createElement('button')
+      remove.type = 'button'
+      remove.className = 'photo-preview__remove'
+      remove.textContent = 'Verwijderen'
+      remove.addEventListener('click', () => {
+        files = files.filter((_, current) => current !== index)
+        syncFileInput(input, files)
+        render()
+      })
+      item.append(thumb, meta, remove)
+      list.append(item)
+    })
+    list.hidden = files.length === 0
+  }
+
+  input.addEventListener('change', () => {
+    const next = [...files, ...input.files]
+    const valid = []
+    for (const file of next) {
+      if (valid.length >= MAX_FILES) break
+      if (!ALLOWED_TYPES.has(file.type) || file.size > MAX_FILE_BYTES) {
+        showStatus(form, FILE_ERROR, 'error')
+        continue
+      }
+      valid.push(file)
+    }
+    files = valid
+    syncFileInput(input, files)
+    render()
+  })
+}
+
+function initTransportField(form) {
+  const select = form.querySelector('[name="transport"]')
+  const addressField = form.querySelector('[data-pickup-address]')
+  if (!select || !addressField) return
+
+  const sync = () => {
+    const needed = select.value === 'ophalen'
+    addressField.hidden = !needed
+    const input = addressField.querySelector('input, textarea')
+    if (input) input.required = needed
+    if (!needed && input) setFieldError(input, '')
+  }
+
+  select.addEventListener('change', sync)
+  sync()
+}
+
 async function submitContact(form) {
   const data = new FormData(form)
   const payload = {
@@ -148,12 +232,43 @@ async function submitContact(form) {
   return body
 }
 
+async function submitOffer(form) {
+  const payload = new FormData(form)
+  payload.set('turnstileToken', readTurnstileToken(form))
+  payload.set(
+    'privacyConsent',
+    payload.get('privacyConsent') === 'true' || payload.get('privacy') === 'on' || payload.get('privacy') === 'true'
+      ? 'true'
+      : 'false',
+  )
+
+  const response = await fetch('/api/offerte', {
+    method: 'POST',
+    headers: { accept: 'application/json' },
+    body: payload,
+  })
+
+  let body = null
+  try {
+    body = await response.json()
+  } catch {
+    body = null
+  }
+
+  if (!response.ok || !body?.success) {
+    throw new Error(body?.error || 'send_failed')
+  }
+  return body
+}
+
 export function initForms() {
   const forms = document.querySelectorAll('[data-offer-form], [data-contact-form]')
   forms.forEach((form) => {
     fillMaterialSelects(form)
-    if (form.hasAttribute('data-contact-form')) {
-      loadTurnstile(form)
+    loadTurnstile(form)
+    if (form.hasAttribute('data-offer-form')) {
+      initPhotoField(form)
+      initTransportField(form)
     }
 
     form.addEventListener('input', (event) => {
@@ -171,17 +286,19 @@ export function initForms() {
         return
       }
 
-      if (form.hasAttribute('data-offer-form')) {
-        showStatus(form, OFFER_STATUS_MESSAGE, 'info')
-        return
-      }
-
       setSubmitting(form, true)
       try {
-        const result = await submitContact(form)
+        const result = form.hasAttribute('data-offer-form') ? await submitOffer(form) : await submitContact(form)
         const reference = result.reference ? ` Referentie: ${result.reference}` : ''
-        showStatus(form, `Bedankt, uw bericht is verzonden.${reference}`, 'ok')
+        const thanks = form.hasAttribute('data-offer-form')
+          ? 'Bedankt, uw aanvraag is verzonden.'
+          : 'Bedankt, uw bericht is verzonden.'
+        showStatus(form, `${thanks}${reference}`, 'ok')
         form.reset()
+        form.querySelector('[data-photo-list]')?.replaceChildren()
+        const photoList = form.querySelector('[data-photo-list]')
+        if (photoList) photoList.hidden = true
+        form.querySelector('[data-pickup-address]') && initTransportField(form)
       } catch {
         showStatus(form, SEND_ERROR, 'error')
       } finally {

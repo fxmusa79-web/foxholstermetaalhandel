@@ -3,9 +3,10 @@
  *
  * Static files come from ./dist via Workers Static Assets (env.ASSETS).
  * This script runs first so HTTP visitors are sent to HTTPS.
- * /api/contact handles the public contact form.
+ * /api/contact and /api/offerte handle the public forms.
  */
 import { handleContact, handleContactConfig } from './contact.js'
+import { handleOffer } from './offer.js'
 
 export default {
   async fetch(request, env) {
@@ -21,6 +22,10 @@ export default {
 
     if (url.pathname === '/api/contact' || url.pathname === '/api/contact/') {
       return handleContact(request, env)
+    }
+
+    if (url.pathname === '/api/offerte' || url.pathname === '/api/offerte/') {
+      return handleOffer(request, env)
     }
 
     if (url.pathname === '/api/config') {
@@ -40,6 +45,14 @@ export default {
       )
     }
 
-    return env.ASSETS.fetch(request)
+    const asset = await env.ASSETS.fetch(request)
+    if (asset.status !== 404) return asset
+
+    const notFound = await env.ASSETS.fetch(new URL('/404.html', request.url))
+    return new Response(notFound.body, {
+      status: 404,
+      statusText: 'Not Found',
+      headers: notFound.headers,
+    })
   },
 }

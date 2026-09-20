@@ -56,6 +56,7 @@ export const legalLinks = [
   { id: 'privacybeleid', label: 'Privacy', href: '/pages/privacybeleid/' },
   { id: 'algemene-voorwaarden', label: 'Algemene voorwaarden', href: '/pages/algemene-voorwaarden/' },
   { id: 'cookiebeleid', label: 'Cookiebeleid', href: '/pages/cookiebeleid/' },
+  { id: 'disclaimer', label: 'Disclaimer', href: '/pages/disclaimer/' },
 ]
 
 export const footerServices = [

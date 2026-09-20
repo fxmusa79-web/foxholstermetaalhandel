@@ -6,13 +6,14 @@
     <title>Metaal aanbieden | Foxholster Metaalhandel</title>
     <meta
       name="description"
-      content="Meld een metaalpartij aan bij Foxholster Metaalhandel in Foxhol. Foto’s, type materiaal en locatie meesturen. Verzending via het formulier is nog niet actief."
+      content="Meld een metaalpartij aan bij Foxholster Metaalhandel in Foxhol. Foto’s, type materiaal en locatie meesturen. We beoordelen wat er praktisch mogelijk is."
     />
     <link rel="canonical" href="https://foxholstermetaalhandel.nl/pages/metaal-aanbieden/" />
     <meta property="og:title" content="Metaal aanbieden | Foxholster Metaalhandel" />
     <meta property="og:description" content="Particulier of zakelijk metaal aanbieden: koper, kabels, aluminium, RVS, machines of een gemengde partij. Beoordeling volgt op de aangeleverde informatie." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://foxholstermetaalhandel.nl/pages/metaal-aanbieden/" />
+    <meta property="og:image" content="https://foxholstermetaalhandel.nl/images/hero/hero-desktop.png" />
     <meta property="og:locale" content="nl_NL" />
     <meta property="og:site_name" content="Foxholster Metaalhandel" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -37,7 +38,7 @@
         <div class="container">
           <p class="kicker">Aanmelden</p>
           <h1>Metaal aanbieden</h1>
-          <p class="lead">Beschrijf de partij zo concreet mogelijk. We beoordelen wat er mogelijk is. Verzending via het formulier is nog niet actief; bel, WhatsApp of e-mail ons.</p>
+          <p class="lead">Beschrijf de partij zo concreet mogelijk. We beoordelen wat er mogelijk is en nemen contact met u op.</p>
         </div>
       </header>
 
@@ -47,37 +48,52 @@
             <h2>Wat u kunt aanbieden</h2>
             <p>Koper, kabels, aluminium, RVS, messing, ferro, motoren, machines, transformatoren, accu’s, grondkabels of een gemengde partij. Zie het <a href="/pages/materialen/">materiaaloverzicht</a> voor voorbeelden. Neem bij twijfel contact op of stuur foto's van de partij.</p>
             <h2>Particulier of zakelijk</h2>
-            <p>Beide kan. Vul bij bedrijven de bedrijfsnaam in. Kleine partijen worden meestal gebracht; grotere lots kunnen voor ophalen worden bekeken.</p>
-            <div class="notice notice--dev u-mt-lg">
-              Foto-upload en verzending via het formulier zijn nog niet actief. Bestanden worden niet naar een server gestuurd. Bel, WhatsApp of e-mail ons om een partij aan te bieden.
-            </div>
+            <p>Beide kan. Vul bij bedrijven de bedrijfsnaam in. Kleine partijen worden meestal gebracht; grotere partijen kunnen voor ophalen worden bekeken.</p>
+            <h2>Foto’s</h2>
+            <p>Foto’s helpen bij de beoordeling. Vermijd waar mogelijk personen, kentekens of andere gegevens die niet nodig zijn.</p>
           </div>
           <div class="form-panel">
             <form class="form" data-offer-form novalidate>
+              <div class="hp" aria-hidden="true">
+                <label for="offer-website">Website</label>
+                <input id="offer-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
               <div class="form-grid form-grid--2">
                 <div class="form-field">
                   <label for="naam">Naam <span class="req">*</span></label>
-                  <input id="naam" name="naam" type="text" required autocomplete="name" />
+                  <input id="naam" name="naam" type="text" required autocomplete="name" maxlength="80" />
                   <span class="field-error"></span>
                 </div>
                 <div class="form-field">
                   <label for="bedrijf">Bedrijfsnaam</label>
-                  <input id="bedrijf" name="bedrijf" type="text" autocomplete="organization" />
+                  <input id="bedrijf" name="bedrijf" type="text" autocomplete="organization" maxlength="120" />
                 </div>
                 <div class="form-field">
                   <label for="telefoon">Telefoonnummer <span class="req">*</span></label>
-                  <input id="telefoon" name="telefoon" type="tel" required autocomplete="tel" />
+                  <input id="telefoon" name="telefoon" type="tel" required autocomplete="tel" maxlength="40" />
                   <span class="field-error"></span>
                 </div>
                 <div class="form-field">
                   <label for="email">E-mailadres <span class="req">*</span></label>
-                  <input id="email" name="email" type="email" required autocomplete="email" />
+                  <input id="email" name="email" type="email" required autocomplete="email" maxlength="120" />
                   <span class="field-error"></span>
+                </div>
+                <div class="form-field">
+                  <label for="klanttype">Particulier / zakelijk</label>
+                  <select id="klanttype" name="klanttype">
+                    <option value="">Maak een keuze</option>
+                    <option value="particulier">Particulier</option>
+                    <option value="zakelijk">Zakelijk</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="postcode">Postcode</label>
+                  <input id="postcode" name="postcode" type="text" autocomplete="postal-code" maxlength="20" />
                 </div>
               </div>
               <div class="form-field">
-                <label for="plaats">Postcode / plaats <span class="req">*</span></label>
-                <input id="plaats" name="plaats" type="text" required autocomplete="postal-code" />
+                <label for="plaats">Plaats <span class="req">*</span></label>
+                <input id="plaats" name="plaats" type="text" required autocomplete="address-level2" maxlength="80" />
                 <span class="field-error"></span>
               </div>
               <div class="form-grid form-grid--2">
@@ -90,28 +106,45 @@
                 </div>
                 <div class="form-field">
                   <label for="hoeveelheid">Geschatte hoeveelheid</label>
-                  <input id="hoeveelheid" name="hoeveelheid" type="text" placeholder="Bijv. 200 kg of 1 aanhanger" />
+                  <input id="hoeveelheid" name="hoeveelheid" type="text" placeholder="Bijv. 200 kg of 1 aanhanger" maxlength="80" />
                 </div>
+                <div class="form-field">
+                  <label for="transport">Brengen / ophalen</label>
+                  <select id="transport" name="transport">
+                    <option value="">Maak een keuze</option>
+                    <option value="brengen">Brengen</option>
+                    <option value="ophalen">Ophalen laten beoordelen</option>
+                    <option value="nader">Nog niet bekend</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-field" data-pickup-address hidden>
+                <label for="adres">Adres of locatie</label>
+                <input id="adres" name="adres" type="text" autocomplete="street-address" maxlength="200" />
+                <p class="field-help">Alleen nodig als u ophalen wilt laten beoordelen. Ophalen is geen automatisme.</p>
+                <span class="field-error"></span>
               </div>
               <div class="form-field">
                 <label for="omschrijving">Omschrijving <span class="req">*</span></label>
-                <textarea id="omschrijving" name="omschrijving" required placeholder="Wat ligt er, hoe is het gescheiden, moet het gebracht of opgehaald worden?"></textarea>
+                <textarea id="omschrijving" name="omschrijving" required maxlength="4000" placeholder="Wat ligt er, hoe is het gescheiden, en wat is de situatie?"></textarea>
                 <span class="field-error"></span>
               </div>
               <div class="form-field">
-                <label for="photos">Foto’s uploaden</label>
+                <label for="photos">Foto’s</label>
                 <input id="photos" name="photos" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple />
-                <p class="field-help">JPG, PNG, WebP of HEIC. Meerdere bestanden mogelijk. Upload is nog niet actief.</p>
+                <p class="field-help">JPG, PNG, WebP of HEIC. Maximaal 6 foto’s, 8 MB per bestand.</p>
+                <ul class="photo-preview" data-photo-list hidden></ul>
               </div>
+              <div class="form-field" data-turnstile hidden></div>
               <div class="form-field">
                 <label class="checkbox">
                   <input type="checkbox" name="privacy" required />
-                  <span>Ik ga akkoord met het <a href="/pages/privacybeleid/">privacybeleid</a> en begrijp dat deze aanvraag via het formulier nog niet wordt verzonden. <span class="req">*</span></span>
+                  <span>Ik ga akkoord met het <a href="/pages/privacybeleid/">privacybeleid</a>. <span class="req">*</span></span>
                 </label>
                 <span class="field-error"></span>
               </div>
-              <button class="btn btn--primary" type="submit">Aanvraag controleren</button>
-              <p class="form-status form-status--info" data-form-status hidden></p>
+              <button class="btn btn--primary" type="submit" data-submit-label="Aanvraag versturen">Aanvraag versturen</button>
+              <p class="form-status" data-form-status hidden></p>
             </form>
           </div>
         </div>

@@ -185,7 +185,7 @@ export function footerHtml() {
           </div>
           <div class="footer-meta footer-meta--sub">
             <span>Privé: <a href="${phoneHref(business.privatePhone)}">${escapeHtml(business.privatePhone)}</a></span>
-            <span>B.g.g.: <a href="${phoneHref(business.mobileFallback)}">${escapeHtml(business.mobileFallback)}</a></span>
+            <span>WhatsApp / b.g.g.: <a href="${whatsappHref()}" target="_blank" rel="noopener noreferrer">${escapeHtml(business.mobileFallback)}</a></span>
             <a
               class="footer-google"
               href="${business.googleProfileUrl}"
