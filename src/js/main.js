@@ -29,3 +29,15 @@ initAnimations()
 initGalleries()
 initContactWidget()
 initMaterialPicker()
+initLegalToc()
+
+function initLegalToc() {
+  const toc = document.querySelector('[data-legal-toc]')
+  if (!toc) return
+  const desktop = window.matchMedia('(min-width: 768px)')
+  const sync = () => {
+    toc.open = desktop.matches
+  }
+  sync()
+  desktop.addEventListener('change', sync)
+}
