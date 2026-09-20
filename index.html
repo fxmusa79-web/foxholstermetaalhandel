@@ -3,22 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Metaal inkoop Foxhol | Foxholster Metaalhandel</title>
+    <title>Metaalhandel Foxhol &amp; Groningen | Foxholster Metaalhandel</title>
     <meta
       name="description"
-      content="Metaalhandel in Foxhol. Foxholster Metaalhandel is al meer dan 35 jaar actief in de inkoop van metalen, kabels, machines en bruikbare materialen."
+      content="Metaal, kabels, machines of een sloopklus aanbieden? Foxholster Metaalhandel is al meer dan 35 jaar actief in Foxhol en Groningen."
     />
     <link rel="canonical" href="https://foxholstermetaalhandel.nl/" />
-    <meta property="og:title" content="Metaal inkoop Foxhol | Foxholster Metaalhandel" />
+    <!-- Add Google Search Console verification here when a token is supplied:
+         <meta name="google-site-verification" content="TOKEN" /> -->
+    <meta property="og:title" content="Metaalhandel Foxhol &amp; Groningen | Foxholster Metaalhandel" />
     <meta
       property="og:description"
-      content="Koper, kabels, aluminium, RVS, machines of een grotere partij metaal aanbieden? Wij beoordelen particuliere en zakelijke partijen in Foxhol en Groningen."
+      content="Metaal, kabels, machines of een sloopklus aanbieden? Foxholster Metaalhandel is al meer dan 35 jaar actief in Foxhol en Groningen."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://foxholstermetaalhandel.nl/" />
     <meta property="og:locale" content="nl_NL" />
     <meta property="og:site_name" content="Foxholster Metaalhandel" />
     <meta property="og:image" content="https://foxholstermetaalhandel.nl/images/hero/hero-desktop.png" />
+    <meta property="og:image:alt" content="Terrein van Foxholster Metaalhandel in Foxhol" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Metaalhandel Foxhol &amp; Groningen | Foxholster Metaalhandel" />
+    <meta
+      name="twitter:description"
+      content="Metaal, kabels, machines of een sloopklus aanbieden? Foxholster Metaalhandel is al meer dan 35 jaar actief in Foxhol en Groningen."
+    />
+    <meta name="twitter:image" content="https://foxholstermetaalhandel.nl/images/hero/hero-desktop.png" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -26,29 +36,52 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Foxholster Metaalhandel",
-        "description": "Metaalhandel in Foxhol. In- en verkoop van metalen, kabels en bruikbare materialen, sloopwerken, inname van accu's en verwerking van grondkabels.",
-        "url": "https://foxholstermetaalhandel.nl/",
-        "telephone": "+31 598 394504",
-        "email": "info@foxholstermetaalhandel.nl",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "G. Imbosstraat 60",
-          "postalCode": "9607 PE",
-          "addressLocality": "Foxhol",
-          "addressRegion": "Groningen",
-          "addressCountry": "NL"
-        },
-        "identifier": {
-          "@type": "PropertyValue",
-          "name": "KvK",
-          "value": "02326351"
-        },
-        "areaServed": [
-          { "@type": "Place", "name": "Foxhol" },
-          { "@type": "Place", "name": "Groningen" },
-          { "@type": "Place", "name": "Noord-Nederland" }
+        "@graph": [
+          {
+            "@type": ["Organization", "LocalBusiness"],
+            "@id": "https://foxholstermetaalhandel.nl/#organization",
+            "name": "Foxholster Metaalhandel",
+            "url": "https://foxholstermetaalhandel.nl/",
+            "logo": "https://foxholstermetaalhandel.nl/images/brand/logo-header-web.png",
+            "image": "https://foxholstermetaalhandel.nl/images/brand/logo-header-web.png",
+            "email": "info@foxholstermetaalhandel.nl",
+            "telephone": "+31598394504",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "G. Imbosstraat 60",
+              "postalCode": "9607 PE",
+              "addressLocality": "Foxhol",
+              "addressRegion": "Groningen",
+              "addressCountry": "NL"
+            },
+            "identifier": {
+              "@type": "PropertyValue",
+              "name": "KvK",
+              "value": "02326351"
+            },
+            "sameAs": ["https://share.google/Xq5MsQbm5nzGwm0Ob"],
+            "areaServed": [
+              { "@type": "Place", "name": "Foxhol" },
+              { "@type": "Place", "name": "Groningen" },
+              { "@type": "Place", "name": "Noord-Nederland" }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://foxholstermetaalhandel.nl/#website",
+            "url": "https://foxholstermetaalhandel.nl/",
+            "name": "Foxholster Metaalhandel",
+            "publisher": { "@id": "https://foxholstermetaalhandel.nl/#organization" },
+            "inLanguage": "nl-NL"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://foxholstermetaalhandel.nl/#webpage",
+            "url": "https://foxholstermetaalhandel.nl/",
+            "name": "Metaalhandel Foxhol & Groningen | Foxholster Metaalhandel",
+            "isPartOf": { "@id": "https://foxholstermetaalhandel.nl/#website" },
+            "about": { "@id": "https://foxholstermetaalhandel.nl/#organization" }
+          }
         ]
       }
     </script>
@@ -143,7 +176,8 @@
             </div>
             <h2>Al meer dan 35 jaar actief in metaalhandel</h2>
             <p class="lead">Al meer dan 35 jaar actief in metaalhandel, kabelverwerking en sloopwerk vanuit Foxhol. We kopen metalen, kabels en bruikbare materialen in van particulieren en bedrijven.</p>
-            <p>Een partij koper, kabels, oud ijzer of machines aanbieden? Neem contact op of stuur foto's. We bekijken om wat voor materiaal en hoeveelheid het gaat en bespreken vervolgens wat praktisch mogelijk is.</p>
+            <p>Een partij koper, kabels, oud ijzer of machines aanbieden? Neem <a href="/pages/contact/">contact</a> op of stuur foto’s. We bekijken om wat voor materiaal en hoeveelheid het gaat en bespreken vervolgens wat praktisch mogelijk is.</p>
+            <p>Lees hoe <a href="/pages/metaal-inkoop/">metaal inkoop</a> werkt, bekijk welke <a href="/pages/materialen/">materialen</a> we beoordelen of de <a href="/pages/zakelijk/">zakelijke metaalstromen</a>.</p>
           </div>
           <figure class="photo-block photo-block--cover photo-block--portrait photo-block--yard">
             <picture>
@@ -345,7 +379,7 @@
           <h2>Sloop- en demontagewerk</h2>
           <p class="lead">Bij metalen installaties, machines en constructies kan ook sloop- of demontagewerk worden besproken. We beoordelen vooraf de situatie, bereikbaarheid en hoeveelheid materiaal.</p>
           <p>Ophalen is mogelijk, niet vanzelfsprekend. Kleine of lastig bereikbare partijen worden in de regel gebracht na afspraak.</p>
-          <p class="u-mt-lg"><a class="btn btn--outline" href="/pages/ophalen-demontage/">Ophalen en demontage</a></p>
+          <p class="u-mt-lg"><a class="btn btn--outline" href="/pages/ophalen-demontage/">Lees over ophalen en demontage</a></p>
         </div>
       </section>
 
@@ -357,7 +391,7 @@
             <p class="lead">Vanuit Foxhol richten we ons in eerste instantie op Groningen en omliggende plaatsen. Voor grotere partijen of zakelijke opdrachten kan een ruimer werkgebied worden besproken.</p>
           </div>
           <p class="u-measure">Er is geen vaste kilometerstraal. Of een locatie in aanmerking komt, hangt af van de partij en de praktische haalbaarheid.</p>
-          <p class="u-mt-lg"><a class="btn btn--outline" href="/pages/werkgebied/">Werkgebied</a></p>
+          <p class="u-mt-lg"><a class="btn btn--outline" href="/pages/werkgebied/">Bekijk het werkgebied</a></p>
         </div>
       </section>
 
@@ -405,7 +439,7 @@
               </details>
             </article>
           </div>
-          <p class="u-mt-lg"><a href="/pages/veelgestelde-vragen/">Alle vragen</a></p>
+          <p class="u-mt-lg"><a href="/pages/veelgestelde-vragen/">Bekijk alle veelgestelde vragen</a></p>
         </div>
       </section>
 

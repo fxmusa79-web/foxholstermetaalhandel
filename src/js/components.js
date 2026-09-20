@@ -154,7 +154,7 @@ export function headerHtml(page) {
             rel="noopener noreferrer"
           >
             ${googleMarkHtml()}
-            <span>Bekijk ons op Google</span>
+            <span>Bekijk ons Google Bedrijfsprofiel</span>
           </a>
         </div>
       </div>
@@ -193,7 +193,7 @@ export function footerHtml() {
               rel="noopener noreferrer"
             >
               ${googleMarkHtml()}
-              <span>Google Bedrijfsprofiel <span aria-hidden="true">→</span></span>
+              <span>Bekijk ons Google Bedrijfsprofiel <span aria-hidden="true">→</span></span>
             </a>
           </div>
         </div>

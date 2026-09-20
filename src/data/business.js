@@ -68,6 +68,7 @@ export const footerServices = [
   { label: 'Grondkabels', href: '/pages/materialen/#grondkabels' },
   { label: 'Sloopwerken', href: '/pages/ophalen-demontage/' },
   { label: 'Zakelijk', href: '/pages/zakelijk/' },
+  { label: 'Werkgebied', href: '/pages/werkgebied/' },
 ]
 
 export const serviceLinks = footerServices

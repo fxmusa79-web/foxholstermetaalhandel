@@ -14,9 +14,15 @@ export default {
     const host = url.hostname
     const isLocal =
       host === 'localhost' || host === '127.0.0.1' || host.endsWith('.localhost')
+    const isWorkersDev = host.endsWith('.workers.dev')
 
     if (url.protocol === 'http:' && !isLocal) {
       url.protocol = 'https:'
+      return Response.redirect(url.toString(), 301)
+    }
+
+    if (host === 'www.foxholstermetaalhandel.nl') {
+      url.hostname = 'foxholstermetaalhandel.nl'
       return Response.redirect(url.toString(), 301)
     }
 
@@ -46,13 +52,27 @@ export default {
     }
 
     const asset = await env.ASSETS.fetch(request)
-    if (asset.status !== 404) return asset
+    if (asset.status !== 404) return withHostHeaders(asset, isWorkersDev)
 
     const notFound = await env.ASSETS.fetch(new URL('/404.html', request.url))
-    return new Response(notFound.body, {
-      status: 404,
-      statusText: 'Not Found',
-      headers: notFound.headers,
-    })
+    return withHostHeaders(
+      new Response(notFound.body, {
+        status: 404,
+        statusText: 'Not Found',
+        headers: notFound.headers,
+      }),
+      isWorkersDev,
+    )
   },
+}
+
+function withHostHeaders(response, isWorkersDev) {
+  if (!isWorkersDev) return response
+  const headers = new Headers(response.headers)
+  headers.set('x-robots-tag', 'noindex, nofollow')
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  })
 }
