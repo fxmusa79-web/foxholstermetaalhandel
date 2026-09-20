@@ -1,5 +1,15 @@
 /* Mobile-first. Explicit checks: 320 / 360 / 390 / 430 and desktop 1366 / 1440 / 1920. */
 
+@media (max-width: 359px) {
+  .processing-section .kicker {
+    letter-spacing: 0.11em;
+  }
+
+  .processing-section h2 {
+    font-size: 1.4rem;
+  }
+}
+
 @media (min-width: 360px) {
   .hero {
     padding-block: 2.2rem 2.5rem;

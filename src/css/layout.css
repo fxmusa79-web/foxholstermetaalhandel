@@ -27,6 +27,17 @@
   color: #d5d3cd;
 }
 
+.processing-section .kicker {
+  display: block;
+  max-width: 22rem;
+  line-height: 1.55;
+}
+
+.processing-section h2 {
+  max-width: 22ch;
+  line-height: 1.22;
+}
+
 .section--muted {
   background: var(--color-white);
 }
