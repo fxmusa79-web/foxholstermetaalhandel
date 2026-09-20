@@ -11,6 +11,7 @@ html {
   font-family: var(--font-body);
   font-size: 100%;
   background: var(--color-surface);
+  scroll-padding-top: calc(var(--header-height) + 1rem);
 }
 
 body {
