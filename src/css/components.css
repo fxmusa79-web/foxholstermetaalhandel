@@ -325,15 +325,48 @@
   cursor: pointer;
   list-style: none;
   padding: 1rem 0;
+  overflow-wrap: break-word;
 }
 
 .faq-item details > summary::-webkit-details-marker {
   display: none;
 }
 
+.faq-item details > summary:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.faq-item__panel {
+  overflow: hidden;
+}
+
+.faq-item details[open] .faq-item__panel {
+  animation: faq-panel-in 180ms ease-out;
+}
+
 .faq-item p {
   padding-bottom: 1rem;
   color: var(--color-muted);
+  overflow-wrap: break-word;
+}
+
+@keyframes faq-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item details[open] .faq-item__panel {
+    animation: none;
+  }
 }
 
 .cta-band {

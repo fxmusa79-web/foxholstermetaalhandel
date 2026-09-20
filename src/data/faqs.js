@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: 'Welke metalen kan ik aanbieden?',
     answer:
-      'U kunt onder meer ferro, non-ferro, kabels, koper, aluminium, RVS, messing, widia, HSS, wolfraam, molybdeen, motoren, machines, transformatoren, accu’s, grondkabels en bruikbare materialen aanbieden. Of een specifieke partij wordt ingenomen, hangt af van soort, hoeveelheid, staat, vervuiling en verwerking. Stuur foto’s en een korte omschrijving mee.',
+      'U kunt onder andere ferro- en non-ferrometalen, koper, kabels, aluminium, RVS, messing, Widia / HSS, wolfraam, molybdeen, grondkabels, accu’s, motoren, machines en transformatoren aanbieden. Staat uw materiaal er niet tussen? Neem dan gerust contact met ons op.',
   },
   {
     question: 'Kopen jullie ook kabels en koper in?',

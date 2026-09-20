@@ -16,6 +16,7 @@ import { initAnimations } from './animations.js'
 import { initGalleries } from './gallery.js'
 import { initContactWidget } from './contact-widget.js'
 import { initMaterialPicker } from './picker.js'
+import { initFaq } from './faq.js'
 
 document.documentElement.classList.add('js-ready')
 
@@ -29,6 +30,7 @@ initAnimations()
 initGalleries()
 initContactWidget()
 initMaterialPicker()
+initFaq()
 initLegalToc()
 
 function initLegalToc() {
