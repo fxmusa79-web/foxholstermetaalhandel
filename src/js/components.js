@@ -26,7 +26,11 @@ function navMarkup(page, className, withChevron = false) {
     <ul class="${className}">
       ${navItems
         .map((item) => {
-          const current = item.id === page ? ' aria-current="page"' : ''
+          const materialChild = ['koper', 'kabels', 'ferro', 'grondkabels'].includes(page)
+          const current =
+            item.id === page || (item.id === 'materialen' && materialChild)
+              ? ' aria-current="page"'
+              : ''
           return `<li><a href="${item.href}"${current}><span>${escapeHtml(item.label)}</span>${chevron}</a></li>`
         })
         .join('')}

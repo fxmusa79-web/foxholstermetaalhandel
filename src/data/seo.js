@@ -2,10 +2,8 @@
  * Shared SEO identifiers for Foxholster Metaalhandel.
  * Keep Organization/LocalBusiness on one @id. Do not invent hours, ratings or geo.
  *
- * Future material detail pages may live at /pages/materialen/{slug}/
- * (koper, kabels, ferro, aluminium, rvs, messing, widia-hss, wolfraam,
- * molybdeen, grondkabels). Only publish a detail page with unique useful
- * content, examples and photography. Do not auto-generate thin pages.
+ * Published material detail pages: koper, kabels, ferro, grondkabels.
+ * Other materials stay on the overview until unique content and photography exist.
  */
 import { SITE_ORIGIN, business } from './business.js'
 
@@ -17,6 +15,10 @@ export const LOGO_URL = `${SITE_ORIGIN}/images/brand/logo-header-web.png`
 export const breadcrumbPages = {
   'metaal-inkoop': { label: 'Metaal inkoop', href: '/pages/metaal-inkoop/' },
   materialen: { label: 'Materialen', href: '/pages/materialen/' },
+  koper: { label: 'Koper', href: '/pages/materialen/koper/' },
+  kabels: { label: 'Kabels', href: '/pages/materialen/kabels/' },
+  ferro: { label: 'Ferro', href: '/pages/materialen/ferro/' },
+  grondkabels: { label: 'Grondkabels', href: '/pages/materialen/grondkabels/' },
   zakelijk: { label: 'Zakelijk', href: '/pages/zakelijk/' },
   'ophalen-demontage': { label: 'Ophalen / Demontage', href: '/pages/ophalen-demontage/' },
   werkgebied: { label: 'Werkgebied', href: '/pages/werkgebied/' },

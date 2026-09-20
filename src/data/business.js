@@ -61,11 +61,12 @@ export const legalLinks = [
 
 export const footerServices = [
   { label: 'Metaal inkoop', href: '/pages/metaal-inkoop/' },
-  { label: 'Kabels', href: '/pages/materialen/#kabels' },
-  { label: 'Koper', href: '/pages/materialen/#koper' },
+  { label: 'Koper', href: '/pages/materialen/koper/' },
+  { label: 'Kabels', href: '/pages/materialen/kabels/' },
+  { label: 'Oud ijzer / ferro', href: '/pages/materialen/ferro/' },
+  { label: 'Grondkabels', href: '/pages/materialen/grondkabels/' },
   { label: 'Machines', href: '/pages/materialen/#machines' },
   { label: "Accu's", href: '/pages/materialen/#accus' },
-  { label: 'Grondkabels', href: '/pages/materialen/#grondkabels' },
   { label: 'Sloopwerken', href: '/pages/ophalen-demontage/' },
   { label: 'Zakelijk', href: '/pages/zakelijk/' },
   { label: 'Werkgebied', href: '/pages/werkgebied/' },

@@ -778,6 +778,12 @@ body.cookie-open .site-main {
   margin-bottom: 0.6rem;
 }
 
+.prose h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
 .prose p + p {
   margin-top: 0.8em;
 }

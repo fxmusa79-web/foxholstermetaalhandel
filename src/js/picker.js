@@ -4,12 +4,16 @@ const PICKS = {
     copy: 'Koperen leidingen, draad, plaat of restpartijen aanbieden? Stuur foto’s en vermeld of het schoon of vermengd is. Beoordeling volgt per partij.',
     href: '/pages/metaal-aanbieden/?materiaal=koper',
     cta: 'Koper aanbieden',
+    moreHref: '/pages/materialen/koper/',
+    moreLabel: 'Over koper verkopen',
   },
   kabels: {
     title: 'Kabels',
     copy: 'Partijen kabels of grondkabels aanbieden? Stuur foto’s en een geschatte hoeveelheid voor beoordeling.',
     href: '/pages/metaal-aanbieden/?materiaal=kabels',
     cta: 'Kabels aanbieden',
+    moreHref: '/pages/materialen/kabels/',
+    moreLabel: 'Over kabels verkopen',
   },
   aluminium: {
     title: 'Aluminium',
@@ -34,6 +38,8 @@ const PICKS = {
     copy: 'IJzerhoudend schroot en staal, van onderdelen tot grotere partijen. Soort, hoeveelheid en vervuiling bepalen of inname past.',
     href: '/pages/metaal-aanbieden/?materiaal=ferro',
     cta: 'Ferro aanbieden',
+    moreHref: '/pages/materialen/ferro/',
+    moreLabel: 'Over oud ijzer / ferro',
   },
   accus: {
     title: "Accu's",
@@ -46,6 +52,8 @@ const PICKS = {
     copy: 'Grondkabels en grotere kabelpartijen bekijken we op soort, hoeveelheid en bereikbaarheid. Foto’s maken de beoordeling praktischer.',
     href: '/pages/metaal-aanbieden/?materiaal=grondkabels',
     cta: 'Grondkabels aanbieden',
+    moreHref: '/pages/materialen/grondkabels/',
+    moreLabel: 'Over grondkabels',
   },
   motoren: {
     title: 'Motoren',
@@ -94,6 +102,7 @@ export function initMaterialPicker() {
   const title = root.querySelector('[data-picker-title]')
   const copy = root.querySelector('[data-picker-copy]')
   const cta = root.querySelector('[data-picker-cta]')
+  const more = root.querySelector('[data-picker-more]')
   if (!panel || !title || !copy || !cta || !buttons.length) return
 
   const select = (key, button) => {
@@ -108,6 +117,15 @@ export function initMaterialPicker() {
     copy.textContent = item.copy
     cta.href = item.href
     cta.textContent = item.cta
+    if (more) {
+      if (item.moreHref) {
+        more.hidden = false
+        more.href = item.moreHref
+        more.textContent = item.moreLabel || 'Lees verder'
+      } else {
+        more.hidden = true
+      }
+    }
     panel.hidden = false
   }
 
