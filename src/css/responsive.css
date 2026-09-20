@@ -2,7 +2,7 @@
 
 @media (min-width: 360px) {
   .hero {
-    padding-block: 2.15rem;
+    padding-block: 2.2rem 2.5rem;
   }
 }
 
@@ -13,7 +13,6 @@
 }
 
 @media (min-width: 700px) {
-  .hero__grid,
   .split {
     grid-template-columns: 1.15fr 0.85fr;
     gap: 2rem;
@@ -22,16 +21,6 @@
 
   .split--reverse {
     grid-template-columns: 0.9fr 1.1fr;
-  }
-
-  .hero {
-    padding-block: 2.6rem 2.8rem;
-  }
-
-  .hero__media img,
-  .hero__media svg {
-    max-height: 26rem;
-    min-height: 18rem;
   }
 
   .grid-2 {
@@ -92,11 +81,6 @@
     min-height: 2.55rem;
   }
 
-  .hero__grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 3rem;
-  }
-
   h1 {
     max-width: 16ch;
   }
@@ -116,7 +100,8 @@
   }
 
   .hero {
-    padding-block: 1.6rem;
+    min-height: 34.5rem;
+    padding-block: 1.85rem 2.1rem;
   }
 
   .btn {
@@ -125,8 +110,20 @@
   }
 }
 
-@media (max-width: 429px) {
-  .hero__actions .btn,
+@media (max-width: 479px) {
+  .hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
+  .hero__actions .btn {
+    min-height: 2.8rem;
+    min-width: 13.25rem;
+    width: auto;
+    flex: 0 0 auto;
+  }
+
   .cta-band__actions .btn {
     flex: 1 1 auto;
     width: auto;
@@ -138,11 +135,33 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .hero {
-    padding-block: 3.4rem;
+    --hero-overlay: linear-gradient(
+      90deg,
+      rgba(8, 9, 10, 0.86) 0%,
+      rgba(8, 9, 10, 0.72) 34%,
+      rgba(8, 9, 10, 0.42) 62%,
+      rgba(8, 9, 10, 0.18) 100%
+    );
+    --hero-position: 54% 46%;
+    align-items: center;
+    min-height: clamp(39rem, 64vh, 46.5rem);
+    padding-block: 3.25rem;
   }
 
+  .hero > .container {
+    width: min(100% - (var(--gutter) * 2), var(--container));
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    min-height: clamp(41rem, 62vh, 47.5rem);
+    padding-block: 3.6rem;
+  }
+
+  .hero > .container,
   .container {
     width: min(100% - 4rem, 76rem);
   }

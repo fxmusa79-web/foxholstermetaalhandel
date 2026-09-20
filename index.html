@@ -54,27 +54,49 @@
     <div data-partial="header"></div>
 
     <main id="inhoud" class="site-main">
-      <section class="hero">
-        <div class="container hero__grid">
-          <div>
-            <p class="kicker">Foxhol · Groningen</p>
+      <section class="hero" aria-label="Introductie">
+        <picture class="hero__media" aria-hidden="true">
+          <source
+            media="(max-width: 767px)"
+            type="image/webp"
+            srcset="/images/hero/hero-phone.webp"
+            width="960"
+            height="1280"
+          />
+          <source
+            media="(max-width: 767px)"
+            type="image/jpeg"
+            srcset="/images/hero/hero-phone.jpg"
+            width="960"
+            height="1280"
+          />
+          <source
+            media="(min-width: 768px)"
+            type="image/webp"
+            srcset="/images/hero/hero-desktop.webp"
+            width="1672"
+            height="941"
+          />
+          <img
+            src="/images/hero/hero-desktop.png"
+            alt=""
+            width="1672"
+            height="941"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+        <div class="container">
+          <div class="hero__content">
+            <p class="kicker">METAALHANDEL • FOXHOL / GRONINGEN</p>
             <h1>Metaal verkopen in Foxhol en omgeving</h1>
             <p class="lead">
-              Koper, kabels, aluminium, RVS, machines of een grotere partij metaal aanbieden? Foxholster Metaalhandel beoordeelt particuliere en zakelijke partijen en bespreekt duidelijk wat er mogelijk is.
+              Koper, kabels, aluminium, RVS, machines of een grotere partij metaal aanbieden? We bekijken de partij en bespreken duidelijk wat er mogelijk is.
             </p>
             <div class="hero__actions">
               <a class="btn btn--primary" href="/pages/metaal-aanbieden/">Metaal aanbieden</a>
-              <a class="btn btn--ghost" href="/pages/contact/">Bel direct</a>
+              <a class="btn btn--ghost" href="tel:[TELEFOONNUMMER]">Bel direct</a>
             </div>
-          </div>
-          <div class="hero__media">
-            <img
-              src="/images/hero/placeholder.svg"
-              width="800"
-              height="500"
-              alt="Tijdelijke geometrische placeholder voor latere industriële fotografie van de metaalhandel."
-            />
-            <span class="hero__caption">Beeldplaceholder · fotografie volgt</span>
           </div>
         </div>
       </section>
