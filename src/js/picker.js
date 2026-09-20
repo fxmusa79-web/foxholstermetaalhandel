@@ -59,6 +59,24 @@ const PICKS = {
     href: '/pages/metaal-aanbieden/?materiaal=machines',
     cta: 'Machines aanbieden',
   },
+  'widia-hss': {
+    title: 'Widia / HSS',
+    copy: 'Hardmetaal, widia en HSS uit gereedschappen, snijplaten, boren of industriële toepassingen. Vermeld type en geschatte hoeveelheid.',
+    href: '/pages/metaal-aanbieden/?materiaal=widia-hss',
+    cta: 'Materiaal aanbieden',
+  },
+  wolfraam: {
+    title: 'Wolfraam',
+    copy: 'Partijen wolfraam of wolfraamhoudend materiaal kunnen worden beoordeeld. Stuur foto’s en informatie over herkomst en hoeveelheid.',
+    href: '/pages/metaal-aanbieden/?materiaal=wolfraam',
+    cta: 'Materiaal aanbieden',
+  },
+  molybdeen: {
+    title: 'Molybdeen',
+    copy: 'Molybdeen en molybdeenhoudende materialen bekijken we op type en hoeveelheid. Geef zo veel mogelijk informatie mee over de partij.',
+    href: '/pages/metaal-aanbieden/?materiaal=molybdeen',
+    cta: 'Materiaal aanbieden',
+  },
   anders: {
     title: 'Anders',
     copy: 'Twijfelt u over het type materiaal? Stuur foto’s en een korte omschrijving. We kijken of de partij in aanmerking komt.',

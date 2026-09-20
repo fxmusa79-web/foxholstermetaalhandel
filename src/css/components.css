@@ -705,6 +705,14 @@ body.cookie-open .site-main {
   object-position: center 28%;
 }
 
+.mat-card--text {
+  align-content: start;
+}
+
+.mat-card--text h3 {
+  white-space: nowrap;
+}
+
 .mat-card__body {
   min-width: 0;
 }

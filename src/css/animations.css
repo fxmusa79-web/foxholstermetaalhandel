@@ -128,6 +128,7 @@
   align-items: center;
   min-height: 3.15rem;
   padding: 0.7rem 0.8rem;
+  white-space: nowrap;
   background: var(--color-white);
   border: 0;
   box-shadow: inset 0 0 0 0 transparent;

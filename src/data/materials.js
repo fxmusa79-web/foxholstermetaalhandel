@@ -121,6 +121,33 @@ export const materials = [
     examples: ['Herbruikbare restpartijen', 'Materialen naast metaal, na beoordeling'],
     image: '/images/materials/non-ferro.svg',
   },
+  {
+    slug: 'widia-hss',
+    name: 'Widia / HSS',
+    short: 'Hardmetaal, widia en HSS uit gereedschappen en industriële toepassingen.',
+    description:
+      'Hardmetaal, widia en HSS uit gereedschappen, snijplaten, boren en industriële toepassingen. Vermeld bij voorkeur het type materiaal en de geschatte hoeveelheid. Beoordeling volgt per partij.',
+    examples: ['Widia', 'HSS', 'Snijplaten', 'Gereedschapsresten'],
+    image: '/images/materials/non-ferro.svg',
+  },
+  {
+    slug: 'wolfraam',
+    name: 'Wolfraam',
+    short: 'Partijen wolfraam of wolfraamhoudend materiaal, na beoordeling.',
+    description:
+      'Partijen wolfraam of wolfraamhoudend materiaal kunnen worden beoordeeld. Stuur bij twijfel foto’s en informatie over herkomst en hoeveelheid. Inname is geen automatisme.',
+    examples: ['Wolfraam', 'Wolfraamhoudend restmateriaal'],
+    image: '/images/materials/non-ferro.svg',
+  },
+  {
+    slug: 'molybdeen',
+    name: 'Molybdeen',
+    short: 'Molybdeen en molybdeenhoudende materialen, afhankelijk van type en hoeveelheid.',
+    description:
+      'Molybdeen en molybdeenhoudende materialen kunnen afhankelijk van type en hoeveelheid worden beoordeeld. Geef zo veel mogelijk informatie mee over de partij.',
+    examples: ['Molybdeen', 'Molybdeenhoudend restmateriaal'],
+    image: '/images/materials/non-ferro.svg',
+  },
 ]
 
 export const materialSelectOptions = [
@@ -136,6 +163,9 @@ export const materialSelectOptions = [
   { value: 'accus', label: "Accu's" },
   { value: 'grondkabels', label: 'Grondkabels' },
   { value: 'bruikbare-materialen', label: 'Bruikbare materialen' },
+  { value: 'widia-hss', label: 'Widia / HSS' },
+  { value: 'wolfraam', label: 'Wolfraam' },
+  { value: 'molybdeen', label: 'Molybdeen' },
   { value: 'sloopwerken', label: 'Sloop / demontage' },
   { value: 'gemengd', label: 'Gemengde partij' },
   { value: 'anders', label: 'Anders' },
