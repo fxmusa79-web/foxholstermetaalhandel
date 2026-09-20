@@ -12,6 +12,8 @@ import { initNavigation } from './navigation.js'
 import { initForms } from './forms.js'
 import { initConsent } from './consent.js'
 import { initAnimations } from './animations.js'
+import { initGalleries } from './gallery.js'
+import { initContactWidget } from './contact-widget.js'
 
 document.documentElement.classList.add('js-ready')
 
@@ -22,3 +24,5 @@ initNavigation()
 initForms()
 initConsent()
 initAnimations()
+initGalleries()
+initContactWidget()

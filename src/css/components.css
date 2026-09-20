@@ -446,6 +446,361 @@
   margin-top: 0.8em;
 }
 
+.practice {
+  overflow: hidden;
+  scroll-margin-top: 6rem;
+}
+
+.practice-track {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  scrollbar-width: none;
+}
+
+.practice-track::-webkit-scrollbar {
+  display: none;
+}
+
+.practice-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  margin: 0;
+  overflow: hidden;
+}
+
+.practice-slide img {
+  display: block;
+  width: 100%;
+  height: clamp(16.85rem, 58vw, 22.5rem);
+  object-fit: cover;
+  background: #1b1e1f;
+}
+
+.practice-slide--people img {
+  object-position: center 18%;
+}
+
+.practice-slide--yard img {
+  object-position: center 30%;
+}
+
+.practice-slide--materials img {
+  object-position: center 42%;
+}
+
+.practice-slide figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--color-muted);
+}
+
+.practice-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+}
+
+.practice-dots {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.practice-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  padding: 0;
+  border-radius: 50%;
+  background: #c4c0b6;
+  border: 0;
+}
+
+.practice-dot.is-active {
+  background: var(--color-charcoal);
+}
+
+.practice-status {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.practice-nav {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.practice-nav button {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  color: var(--color-charcoal);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.trust-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--color-line);
+  border: 1px solid var(--color-line);
+}
+
+.trust-item {
+  background: var(--color-white);
+  padding: 1rem 1.05rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.trust-item span {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-steel);
+}
+
+.trust-item strong {
+  font-size: 1.05rem;
+}
+
+.trust-note {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  max-width: 40rem;
+  margin-top: 1rem;
+}
+
+.cert-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.15rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cert-logos li {
+  display: flex;
+  align-items: center;
+}
+
+.cert-logos img {
+  display: block;
+  height: 2.15rem;
+  width: auto;
+  max-width: 9.5rem;
+  object-fit: contain;
+}
+
+.cert-logos:not(.cert-logos--footer) li:has(img) {
+  background: #151617;
+  padding: 0.35rem 0.55rem;
+}
+
+.iso-badge {
+  display: grid;
+  gap: 0.05rem;
+  min-width: 6.5rem;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid var(--color-line-strong);
+  background: var(--color-header);
+  color: var(--color-charcoal);
+  line-height: 1.2;
+}
+
+.iso-badge strong {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.iso-badge small {
+  font-size: 0.68rem;
+  color: var(--color-muted);
+}
+
+.footer-certs {
+  margin-top: 1.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid #2c3133;
+}
+
+.footer-certs__label {
+  margin: 0 0 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9aa0a3;
+}
+
+.cert-logos--footer {
+  margin: 0;
+  gap: 0.75rem 1rem;
+}
+
+.cert-logos--footer img {
+  height: 2rem;
+  max-width: 9.25rem;
+}
+
+.cert-logos--footer .iso-badge {
+  background: transparent;
+  border-color: #4a5053;
+  color: #e8e6e1;
+  min-width: 5.8rem;
+  padding: 0.22rem 0.5rem;
+}
+
+.cert-logos--footer .iso-badge small {
+  color: #9aa0a3;
+}
+
+.contact-fab {
+  position: fixed;
+  z-index: 50;
+  right: var(--floating-contact-right);
+  bottom: var(--floating-contact-bottom-offset);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+  width: min(280px, calc(100vw - 2rem));
+  pointer-events: none;
+}
+
+.contact-fab__menu,
+.contact-fab__toggle {
+  pointer-events: auto;
+}
+
+.contact-fab__menu {
+  width: 100%;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  box-shadow: var(--shadow-panel);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  transform-origin: bottom right;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.contact-fab.is-open .contact-fab__menu {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.contact-fab__item {
+  display: grid;
+  grid-template-columns: 2.35rem 1fr;
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.7rem 0.85rem;
+  text-decoration: none;
+  color: var(--color-charcoal);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.contact-fab__item:last-child {
+  border-bottom: 0;
+}
+
+.contact-fab__item:hover {
+  background: var(--color-header);
+  color: var(--color-charcoal);
+}
+
+.contact-fab__item strong {
+  display: block;
+  font-size: 0.92rem;
+}
+
+.contact-fab__item small {
+  display: block;
+  margin-top: 0.12rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.contact-fab__icon {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: var(--color-header);
+  color: var(--color-charcoal);
+}
+
+.contact-fab__icon--wa {
+  background: #e8f6eb;
+  color: #128c7e;
+}
+
+.contact-fab__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  width: var(--floating-contact-size);
+  height: var(--floating-contact-size);
+  border-radius: 50%;
+  background: var(--color-brand-red);
+  color: var(--color-white);
+  border: 0;
+  box-shadow: 0 8px 20px rgba(23, 25, 26, 0.22);
+}
+
+.contact-fab__toggle:hover {
+  background: var(--color-brand-red-dark);
+}
+
+.contact-fab__toggle:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--color-brand-red);
+}
+
+.contact-fab__label {
+  display: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-fab__glyph {
+  display: grid;
+  place-items: center;
+}
+
+.contact-fab__glyph--close {
+  display: none;
+}
+
+.contact-fab.is-open .contact-fab__glyph--open {
+  display: none;
+}
+
+.contact-fab.is-open .contact-fab__glyph--close {
+  display: grid;
+}
+
 .placeholder-photo {
   min-height: 12rem;
   background: repeating-linear-gradient(

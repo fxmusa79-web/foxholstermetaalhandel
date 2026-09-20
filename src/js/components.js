@@ -7,6 +7,7 @@ import {
   phoneHref,
   emailHref,
 } from '../data/business.js'
+import { contactWidgetHtml } from './contact-widget.js'
 
 function escapeHtml(value) {
   return String(value)
@@ -141,6 +142,10 @@ export function footerHtml() {
           <button class="cookie-settings" type="button" data-consent-open>Cookie-instellingen</button>
         </div>
       </div>
+      <div class="container footer-certs">
+        <p class="footer-certs__label">Registraties &amp; kwaliteit</p>
+        ${certLogosHtml('cert-logos cert-logos--footer')}
+      </div>
     </footer>
   `
 }
@@ -189,6 +194,31 @@ export function consentHtml() {
   `
 }
 
+export function certLogosHtml(className = 'cert-logos') {
+  return `
+    <ul class="${className}">
+      <li>
+        <img src="/images/certifications/mrf-metaal-recycling-federatie-logo.png" width="296" height="100" alt="Metaal Recycling Federatie" />
+      </li>
+      <li>
+        <img src="/images/certifications/ecostars-fleet-recognition-logo.png" width="752" height="188" alt="ECOSTARS fleet recognition" />
+      </li>
+      <li>
+        <span class="iso-badge">
+          <strong>ISO 9001</strong>
+          <small>Kwaliteitsmanagement</small>
+        </span>
+      </li>
+      <li>
+        <span class="iso-badge">
+          <strong>ISO 14001</strong>
+          <small>Milieumanagement</small>
+        </span>
+      </li>
+    </ul>
+  `
+}
+
 export function mountChrome(page) {
   const topbar = document.querySelector('[data-partial="topbar"]')
   const header = document.querySelector('[data-partial="header"]')
@@ -199,4 +229,7 @@ export function mountChrome(page) {
   if (header) header.outerHTML = headerHtml(page)
   if (footer) footer.outerHTML = footerHtml()
   if (consent) consent.outerHTML = consentHtml()
+  if (!document.querySelector('[data-contact-fab]')) {
+    document.body.insertAdjacentHTML('beforeend', contactWidgetHtml())
+  }
 }

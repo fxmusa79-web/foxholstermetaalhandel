@@ -61,4 +61,14 @@
     transform: none;
     transition: none;
   }
+
+  .practice-track,
+  .contact-fab__menu {
+    scroll-behavior: auto;
+    transition: none;
+  }
+
+  .contact-fab__menu {
+    transform: none;
+  }
 }

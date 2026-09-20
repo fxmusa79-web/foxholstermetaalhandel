@@ -32,6 +32,9 @@ Thumbs.db
 *.sln
 *.sw?
 
+# Original supplied asset pack — web copies live in public/images
+foxholster_assets_renamed/
+
 # SSH keys and credentials — never commit
 .ssh/
 *.pem

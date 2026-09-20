@@ -402,6 +402,18 @@
   max-height: 28rem;
 }
 
+.photo-block--people img {
+  object-position: center 18%;
+}
+
+.photo-block--yard img {
+  object-position: center 32%;
+}
+
+.photo-block--materials img {
+  object-position: center 46%;
+}
+
 .photo-block figcaption {
   margin-top: 0.7rem;
   font-size: 0.92rem;
