@@ -588,6 +588,7 @@
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
   touch-action: pan-x;
+  overflow-anchor: none;
   scrollbar-width: none;
 }
 
@@ -613,6 +614,10 @@
 
 .practice-slide--people img {
   object-position: center 18%;
+}
+
+.practice-slide--arch img {
+  object-position: center 40%;
 }
 
 .practice-slide--yard img {

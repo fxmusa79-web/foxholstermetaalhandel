@@ -113,9 +113,16 @@ function initGallery(root) {
     else if (!interacting) start()
   })
   carouselQuery.addEventListener('change', () => {
+    interacting = false
+    window.clearTimeout(resumeTimer)
     stop()
+    if (isCarousel()) {
+      goTo(0)
+      track.scrollTo({ left: 0, behavior: 'auto' })
+      start()
+      return
+    }
     updateDots()
-    if (!interacting) start()
   })
 
   prev?.addEventListener('click', () => {
@@ -129,6 +136,15 @@ function initGallery(root) {
     scheduleResume()
   })
 
-  updateDots()
+  const resetToStart = () => {
+    index = 0
+    track.scrollTo({ left: 0, behavior: 'auto' })
+    updateDots()
+  }
+
+  resetToStart()
+  if (isCarousel()) {
+    requestAnimationFrame(resetToStart)
+  }
   start()
 }

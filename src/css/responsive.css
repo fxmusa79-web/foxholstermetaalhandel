@@ -361,15 +361,19 @@
     scroll-snap-type: none;
   }
 
+  .practice-slide--arch {
+    display: none;
+  }
+
   .practice-slide {
     min-width: 0;
   }
 
-  .practice-slide:first-child {
+  .practice-slide--featured {
     grid-row: 1 / span 2;
   }
 
-  .practice-slide:nth-child(4) {
+  .practice-slide--span {
     grid-column: 1 / -1;
   }
 
@@ -379,7 +383,7 @@
     max-height: none;
   }
 
-  .practice-slide:first-child img {
+  .practice-slide--featured img {
     min-height: 22rem;
   }
 
@@ -421,7 +425,7 @@
     grid-template-rows: repeat(2, minmax(12.5rem, 17rem));
   }
 
-  .practice-slide:nth-child(4) {
+  .practice-slide--span {
     grid-column: 2 / 4;
     grid-row: 2;
   }
