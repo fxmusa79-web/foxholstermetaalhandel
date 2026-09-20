@@ -312,8 +312,12 @@
   border-color: var(--color-accent-pressed);
 }
 
+.quality-section::before {
+  opacity: 0.022;
+}
+
 .section--dark .trust-item {
-  background: #1c1f20;
+  background: transparent;
   color: var(--color-white);
 }
 
@@ -322,12 +326,18 @@
 }
 
 .section--dark .trust-grid {
-  background: #2c3133;
-  border-color: #2c3133;
+  background: none;
+  border: 0;
 }
 
 .section--dark .trust-note {
-  color: #b8b4ac;
+  color: #8c9194;
+}
+
+.quality-section + .cta-band {
+  border-top: 1px solid #32373a;
+  padding-block: 3.75rem;
+  background: #181a1b;
 }
 
 .section--dark .iso-badge {

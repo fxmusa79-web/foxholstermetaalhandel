@@ -43,10 +43,6 @@
     grid-column: span 2;
   }
 
-  .trust-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .picker-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -223,6 +219,20 @@
 }
 
 @media (max-width: 699px) {
+  .quality-section .cert-logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.95rem;
+  }
+
+  .quality-section .cert-logos img {
+    height: 2.15rem;
+    max-width: min(9.5rem, 100%);
+  }
+
   .topbar {
     font-size: 0.8125rem;
   }
@@ -310,6 +320,15 @@
 }
 
 @media (max-width: 359px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .quality-section .cert-logos {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .topbar {
     font-size: 0.75rem;
   }
@@ -347,6 +366,19 @@
 }
 
 @media (min-width: 768px) {
+  .trust-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem 2rem;
+  }
+
+  .quality-section {
+    padding-block: 4rem;
+  }
+
+  .quality-section + .cta-band {
+    padding-block: 4.25rem;
+  }
+
   .page-hero {
     min-height: 18.5rem;
     padding-block: 3.15rem 3.35rem;
@@ -430,7 +462,6 @@
     grid-row: 2;
   }
 
-  .trust-grid,
   .trust-strip__list {
     grid-template-columns: repeat(4, 1fr);
   }
