@@ -3,8 +3,10 @@
  *
  * Static files come from ./dist via Workers Static Assets (env.ASSETS).
  * This script runs first so HTTP visitors are sent to HTTPS.
- * /api/* returns 501 until Resend/Turnstile are configured.
+ * /api/contact handles the public contact form.
  */
+import { handleContact, handleContactConfig } from './contact.js'
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url)
@@ -17,14 +19,22 @@ export default {
       return Response.redirect(url.toString(), 301)
     }
 
+    if (url.pathname === '/api/contact' || url.pathname === '/api/contact/') {
+      return handleContact(request, env)
+    }
+
+    if (url.pathname === '/api/config') {
+      return handleContactConfig(env)
+    }
+
     if (url.pathname.startsWith('/api/')) {
       return Response.json(
         {
           success: false,
-          error: 'not_configured',
+          error: 'not_found',
         },
         {
-          status: 501,
+          status: 404,
           headers: { 'cache-control': 'no-store' },
         },
       )

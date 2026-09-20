@@ -93,16 +93,11 @@ Confirmed contact, address, KvK and registrations are in `src/data/business.js`.
 
 Canonical, Open Graph, sitemap and JSON-LD URLs use `https://foxholstermetaalhandel.nl`.
 
-## Form and API backend (not configured)
+## Form and API backend
 
-Forms stay frontend-safe: they do not pretend to send mail. `worker/index.js` reserves `/api/*` and returns `501` until real credentials exist.
+`POST /api/contact` sends contact enquiries through the Worker, Resend and D1. Runtime secrets stay in Cloudflare Worker Settings (or local `.dev.vars`) and are never committed.
 
-Later stack — **do not add secrets until they are supplied**:
-
-- Resend
-- Cloudflare Turnstile
-- optional R2 photo uploads
-- optional D1 lead storage
+The offer form on `/pages/metaal-aanbieden/` stays frontend-only until that endpoint is added.
 
 ## Deployment
 

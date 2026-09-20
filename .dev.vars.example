@@ -1,0 +1,9 @@
+# Local Worker secrets for wrangler dev. Copy to .dev.vars and fill in.
+# .dev.vars is gitignored. Never commit real keys.
+
+RESEND_API_KEY=
+TURNSTILE_SECRET_KEY=
+TURNSTILE_SITE_KEY=
+CONTACT_EMAIL=info@foxholstermetaalhandel.nl
+FROM_EMAIL=website@foxholstermetaalhandel.nl
+FROM_NAME=Foxholster Metaalhandel

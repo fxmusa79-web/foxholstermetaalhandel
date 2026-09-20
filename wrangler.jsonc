@@ -4,6 +4,11 @@
   "compatibility_date": "2026-09-20",
   "main": "./worker/index.js",
   "keep_vars": true,
+  "vars": {
+    "CONTACT_EMAIL": "info@foxholstermetaalhandel.nl",
+    "FROM_EMAIL": "website@foxholstermetaalhandel.nl",
+    "FROM_NAME": "Foxholster Metaalhandel"
+  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
@@ -14,7 +19,8 @@
     {
       "binding": "DB",
       "database_name": "foxholster-metaal",
-      "database_id": "41b4dafd-440e-446c-9098-f4b65c747a41"
+      "database_id": "41b4dafd-440e-446c-9098-f4b65c747a41",
+      "migrations_dir": "migrations"
     }
   ],
   "r2_buckets": [

@@ -6,6 +6,7 @@
   "description": "Public website for Foxholster Metaalhandel — Dutch metal trading and recycling, Foxhol / Groningen.",
   "scripts": {
     "dev": "vite",
+    "dev:worker": "wrangler dev",
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "wrangler deploy --autoconfig=false"

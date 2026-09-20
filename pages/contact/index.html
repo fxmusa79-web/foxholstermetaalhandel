@@ -47,124 +47,156 @@
       }
     </script>
   </head>
-  <body data-page="contact">
+  <body data-page="contact" class="contact-page">
     <a class="skip-link" href="#inhoud">Ga naar inhoud</a>
     <div data-partial="topbar"></div>
     <div data-partial="header"></div>
     <main id="inhoud" class="site-main">
-      <header class="page-hero">
+      <header class="page-intro">
         <div class="container">
           <p class="kicker">Contact</p>
           <h1>Neem contact op</h1>
-          <p class="lead">Voor een beoordeling van een partij is het aanmeldformulier het meest geschikt. Voor overige vragen kunt u bellen, mailen of het contactformulier gebruiken.</p>
+          <p class="lead">
+            Voor een beoordeling van een partij is het aanmeldformulier het meest geschikt. Voor overige vragen kunt u
+            bellen, mailen of het contactformulier gebruiken.
+          </p>
         </div>
       </header>
 
-      <section class="section">
-        <div class="container split">
-          <div>
-            <div class="contact-group">
-              <h2>Contact</h2>
-              <p><strong>Foxholster Metaalhandel</strong></p>
-              <p>G. Imbosstraat 60<br />9607 PE Foxhol</p>
-              <dl class="contact-facts">
-                <div>
-                  <dt>Telefoon</dt>
-                  <dd><a href="tel:+31598394504">0598-394504</a></dd>
-                </div>
-                <div>
-                  <dt>Privé</dt>
-                  <dd><a href="tel:+31598380686">0598-380686</a></dd>
-                </div>
-                <div>
-                  <dt>B.g.g.</dt>
-                  <dd><a href="tel:+31650565966">06-50565966</a></dd>
-                </div>
-                <div>
-                  <dt>E-mail</dt>
-                  <dd><a href="mailto:info@foxholstermetaalhandel.nl">info@foxholstermetaalhandel.nl</a></dd>
-                </div>
-              </dl>
-            </div>
-
-            <div class="contact-group">
-              <h2>Bedrijfsgegevens</h2>
-              <dl class="contact-facts">
-                <div>
-                  <dt>KvK</dt>
-                  <dd>02326351</dd>
-                </div>
-                <div>
-                  <dt>Bereikbaarheid</dt>
-                  <dd>Neem contact op voor actuele bereikbaarheid.</dd>
-                </div>
-              </dl>
-            </div>
-
-            <div class="contact-group">
-              <h2>Registratiegegevens</h2>
-              <dl class="contact-facts">
-                <div>
-                  <dt>Inzamel nr.</dt>
-                  <dd>01.853</dd>
-                </div>
-                <div>
-                  <dt>BE / verwerker</dt>
-                  <dd>0.1V</dd>
-                </div>
-                <div>
-                  <dt>VIHB</dt>
-                  <dd>GR 5-3716</dd>
-                </div>
-              </dl>
-            </div>
-
-            <p class="u-mt-lg">
-              <a class="btn btn--primary" href="/pages/metaal-aanbieden/">Metaal aanbieden</a>
-              <a class="btn btn--outline" href="tel:+31598394504">Bel direct</a>
-            </p>
-            <figure class="photo-block photo-block--cover photo-block--portrait photo-block--yard u-mt-xl">
-              <picture>
-                <source type="image/webp" srcset="/images/company/foxholster-bedrijfswerf-truck-heftrucks.webp" />
-                <img src="/images/company/foxholster-bedrijfswerf-truck-heftrucks.jpg" alt="Bedrijfsterrein van Foxholster Metaalhandel in Foxhol" width="960" height="1280" loading="lazy" />
-              </picture>
-              <figcaption>G. Imbosstraat 60, 9607 PE Foxhol.</figcaption>
-            </figure>
+      <section class="section contact-section">
+        <div class="container">
+          <div class="contact-quick" aria-label="Direct contact">
+            <a class="contact-quick__item" href="tel:+31598394504">
+              <span aria-hidden="true">☎</span>
+              Bel direct
+            </a>
+            <a
+              class="contact-quick__item"
+              href="https://wa.me/31650565966"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">✉</span>
+              WhatsApp
+            </a>
+            <a class="contact-quick__item" href="mailto:info@foxholstermetaalhandel.nl">
+              <span aria-hidden="true">@</span>
+              E-mail
+            </a>
           </div>
-          <div class="form-panel">
-            <h2>Contactformulier</h2>
-            <p class="field-help">Verzending via dit formulier is nog niet actief. Bel, WhatsApp of e-mail ons; het formulier stuurt nu geen gegevens.</p>
-            <form class="form u-mt-md" data-contact-form novalidate>
-              <div class="form-field">
-                <label for="contact-naam">Naam <span class="req">*</span></label>
-                <input id="contact-naam" name="naam" type="text" required autocomplete="name" />
-                <span class="field-error"></span>
+
+          <div class="contact-layout">
+            <div class="contact-layout__details">
+              <div class="contact-group">
+                <h2>Contact</h2>
+                <p><strong>Foxholster Metaalhandel</strong></p>
+                <p>G. Imbosstraat 60<br />9607 PE Foxhol</p>
+                <dl class="contact-facts">
+                  <div>
+                    <dt>Telefoon</dt>
+                    <dd><a href="tel:+31598394504">0598-394504</a></dd>
+                  </div>
+                  <div>
+                    <dt>Privé</dt>
+                    <dd><a href="tel:+31598380686">0598-380686</a></dd>
+                  </div>
+                  <div>
+                    <dt>WhatsApp / b.g.g.</dt>
+                    <dd>
+                      <a href="https://wa.me/31650565966" target="_blank" rel="noopener noreferrer">06-50565966</a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>E-mail</dt>
+                    <dd><a href="mailto:info@foxholstermetaalhandel.nl">info@foxholstermetaalhandel.nl</a></dd>
+                  </div>
+                </dl>
               </div>
-              <div class="form-field">
-                <label for="contact-telefoon">Telefoonnummer <span class="req">*</span></label>
-                <input id="contact-telefoon" name="telefoon" type="tel" required autocomplete="tel" />
-                <span class="field-error"></span>
+
+              <div class="contact-group">
+                <h2>Bedrijfsgegevens</h2>
+                <dl class="contact-facts">
+                  <div>
+                    <dt>KvK</dt>
+                    <dd>02326351</dd>
+                  </div>
+                  <div>
+                    <dt>Bereikbaarheid</dt>
+                    <dd>Neem contact op voor actuele bereikbaarheid.</dd>
+                  </div>
+                </dl>
               </div>
-              <div class="form-field">
-                <label for="contact-email">E-mailadres <span class="req">*</span></label>
-                <input id="contact-email" name="email" type="email" required autocomplete="email" />
-                <span class="field-error"></span>
+
+              <div class="contact-group">
+                <h2>Registratiegegevens</h2>
+                <dl class="contact-facts">
+                  <div>
+                    <dt>Inzamel nr.</dt>
+                    <dd>01.853</dd>
+                  </div>
+                  <div>
+                    <dt>BE / verwerker</dt>
+                    <dd>0.1V</dd>
+                  </div>
+                  <div>
+                    <dt>VIHB</dt>
+                    <dd>GR 5-3716</dd>
+                  </div>
+                </dl>
               </div>
-              <div class="form-field">
-                <label for="contact-bericht">Bericht <span class="req">*</span></label>
-                <textarea id="contact-bericht" name="bericht" required></textarea>
-                <span class="field-error"></span>
-              </div>
-              <div class="form-field">
-                <label class="checkbox">
-                  <input type="checkbox" name="privacy" required />
-                  <span>Ik ga akkoord met het <a href="/pages/privacybeleid/">privacybeleid</a>. <span class="req">*</span></span>
-                </label>
-                <span class="field-error"></span>
-              </div>
-              <button class="btn btn--primary" type="submit">Verstuur bericht</button>
-              <p class="form-status form-status--info" data-form-status hidden></p>
-            </form>
+
+              <p class="contact-actions">
+                <a class="btn btn--primary" href="/pages/metaal-aanbieden/">Metaal aanbieden</a>
+                <a class="btn btn--outline" href="tel:+31598394504">Bel direct</a>
+              </p>
+            </div>
+
+            <div class="form-panel contact-layout__form">
+              <h2>Contactformulier</h2>
+              <p class="field-help">Vul uw gegevens in. We nemen contact met u op. Bel bij spoed 0598-394504.</p>
+              <form class="form u-mt-md" data-contact-form novalidate>
+                <div class="hp" aria-hidden="true">
+                  <label for="contact-website">Website</label>
+                  <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+                <div class="form-field">
+                  <label for="contact-naam">Naam <span class="req">*</span></label>
+                  <input id="contact-naam" name="name" type="text" required autocomplete="name" maxlength="80" />
+                  <span class="field-error"></span>
+                </div>
+                <div class="form-field">
+                  <label for="contact-bedrijf">Bedrijf</label>
+                  <input id="contact-bedrijf" name="company" type="text" autocomplete="organization" maxlength="120" />
+                </div>
+                <div class="form-field">
+                  <label for="contact-telefoon">Telefoonnummer <span class="req">*</span></label>
+                  <input id="contact-telefoon" name="phone" type="tel" required autocomplete="tel" maxlength="40" />
+                  <span class="field-error"></span>
+                </div>
+                <div class="form-field">
+                  <label for="contact-email">E-mailadres <span class="req">*</span></label>
+                  <input id="contact-email" name="email" type="email" required autocomplete="email" maxlength="120" />
+                  <span class="field-error"></span>
+                </div>
+                <div class="form-field">
+                  <label for="contact-bericht">Bericht <span class="req">*</span></label>
+                  <textarea id="contact-bericht" name="message" required maxlength="4000"></textarea>
+                  <span class="field-error"></span>
+                </div>
+                <div class="form-field" data-turnstile hidden></div>
+                <div class="form-field">
+                  <label class="checkbox">
+                    <input type="checkbox" name="privacyConsent" value="true" required />
+                    <span>Ik ga akkoord met het <a href="/pages/privacybeleid/">privacybeleid</a>. <span class="req">*</span></span>
+                  </label>
+                  <span class="field-error"></span>
+                </div>
+                <button class="btn btn--primary" type="submit" data-submit-label="Verstuur bericht">
+                  Verstuur bericht
+                </button>
+                <p class="form-status" data-form-status hidden></p>
+              </form>
+            </div>
           </div>
         </div>
       </section>
