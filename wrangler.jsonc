@@ -1,12 +1,26 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "foxholstermetaalhandel",
   "compatibility_date": "2026-09-20",
-  "main": "worker/index.js",
+  "main": "./worker/index.js",
+  "keep_vars": true,
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "run_worker_first": ["/api/*"]
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "foxholster-metaal",
+      "database_id": "41b4dafd-440e-446c-9098-f4b65c747a41"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "UPLOADS",
+      "bucket_name": "foxholster-bucket"
+    }
+  ]
 }
