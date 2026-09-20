@@ -1,34 +1,35 @@
 /**
  * Foxholster Metaalhandel Worker.
  *
- * HTML, CSS, JS and images are served from ./dist via Workers Static Assets.
- * This script runs only for /api/* (see wrangler.jsonc run_worker_first).
- *
- * Later endpoints (not configured yet — no secrets in this repo):
- * - POST /api/contact
- * - POST /api/aanbieden
- * - Turnstile verification
- * - Resend mail
- * - optional R2 uploads / D1 storage
+ * Static files come from ./dist via Workers Static Assets (env.ASSETS).
+ * This script runs first so HTTP visitors are sent to HTTPS.
+ * /api/* returns 501 until Resend/Turnstile are configured.
  */
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url)
+    const host = url.hostname
+    const isLocal =
+      host === 'localhost' || host === '127.0.0.1' || host.endsWith('.localhost')
 
-    if (!url.pathname.startsWith('/api/')) {
-      return new Response('Not found', { status: 404 })
+    if (url.protocol === 'http:' && !isLocal) {
+      url.protocol = 'https:'
+      return Response.redirect(url.toString(), 301)
     }
 
-    return Response.json(
-      {
-        ok: false,
-        error: 'not_configured',
-        message: 'Dit API-eindpunt is nog niet actief.',
-      },
-      {
-        status: 501,
-        headers: { 'cache-control': 'no-store' },
-      },
-    )
+    if (url.pathname.startsWith('/api/')) {
+      return Response.json(
+        {
+          success: false,
+          error: 'not_configured',
+        },
+        {
+          status: 501,
+          headers: { 'cache-control': 'no-store' },
+        },
+      )
+    }
+
+    return env.ASSETS.fetch(request)
   },
 }
