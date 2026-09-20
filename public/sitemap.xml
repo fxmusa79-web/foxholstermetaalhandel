@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Placeholder sitemap.
+  Vervang https://www.example.nl door het productiedomein voordat de site live gaat.
+  Productiedomein is in dit project nog niet geconfigureerd.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.example.nl/</loc></url>
+  <url><loc>https://www.example.nl/pages/metaal-inkoop/</loc></url>
+  <url><loc>https://www.example.nl/pages/materialen/</loc></url>
+  <url><loc>https://www.example.nl/pages/zakelijk/</loc></url>
+  <url><loc>https://www.example.nl/pages/ophalen-demontage/</loc></url>
+  <url><loc>https://www.example.nl/pages/werkgebied/</loc></url>
+  <url><loc>https://www.example.nl/pages/over-ons/</loc></url>
+  <url><loc>https://www.example.nl/pages/veelgestelde-vragen/</loc></url>
+  <url><loc>https://www.example.nl/pages/contact/</loc></url>
+  <url><loc>https://www.example.nl/pages/metaal-aanbieden/</loc></url>
+  <url><loc>https://www.example.nl/pages/privacybeleid/</loc></url>
+  <url><loc>https://www.example.nl/pages/algemene-voorwaarden/</loc></url>
+  <url><loc>https://www.example.nl/pages/cookiebeleid/</loc></url>
+</urlset>

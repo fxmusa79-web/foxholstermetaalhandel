@@ -1,0 +1,15 @@
+{
+  "name": "foxholster-metaalhandel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Frontend foundation for Foxholster Metaalhandel — Dutch metal trading and recycling, Foxhol / Groningen.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}

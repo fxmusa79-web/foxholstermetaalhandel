@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+  <title>Temporary pickup and dismantling placeholder</title>
+  <rect width="640" height="400" fill="#202325"/>
+  <rect x="90" y="160" width="280" height="90" fill="#2f3436" stroke="#62686B"/>
+  <rect x="400" y="120" width="140" height="130" fill="#17191A" stroke="#B85F32"/>
+  <text x="90" y="340" fill="#8a9093" font-family="Arial, sans-serif" font-size="13" letter-spacing="1.5">PLACEHOLDER - PICKUP / DISMANTLING</text>
+</svg>

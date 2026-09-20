@@ -1,0 +1,24 @@
+import '../css/reset.css'
+import '../css/variables.css'
+import '../css/base.css'
+import '../css/layout.css'
+import '../css/components.css'
+import '../css/forms.css'
+import '../css/utilities.css'
+import '../css/responsive.css'
+
+import { mountChrome } from './components.js'
+import { initNavigation } from './navigation.js'
+import { initForms } from './forms.js'
+import { initConsent } from './consent.js'
+import { initAnimations } from './animations.js'
+
+document.documentElement.classList.add('js-ready')
+
+const page = document.body?.dataset.page || 'home'
+
+mountChrome(page)
+initNavigation()
+initForms()
+initConsent()
+initAnimations()

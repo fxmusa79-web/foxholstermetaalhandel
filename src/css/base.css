@@ -1,0 +1,108 @@
+/*
+  External fonts are loaded from Google Fonts for the initial foundation.
+  Structure them for later self-hosting:
+  - Display: Barlow Condensed
+  - Body: IBM Plex Sans
+  Replace the @import with local @font-face files in /public/fonts/ if required.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+
+html {
+  font-family: var(--font-body);
+  font-size: 100%;
+  background: var(--color-surface);
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  font-weight: 400;
+}
+
+body.is-nav-open {
+  overflow: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: 0.5rem;
+  z-index: 200;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-white);
+  color: var(--color-charcoal);
+  border: 1px solid var(--color-charcoal);
+  transform: translateY(-140%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--color-charcoal);
+  line-height: var(--leading-tight);
+}
+
+h1 {
+  font-size: clamp(1.85rem, 6vw, 3.15rem);
+  max-width: 18ch;
+}
+
+h2 {
+  font-size: clamp(1.55rem, 3.4vw, 2.15rem);
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+p + p {
+  margin-top: 0.9em;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+strong {
+  font-weight: 600;
+}
+
+small {
+  font-size: var(--text-sm);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+  margin: var(--space-xl) 0;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-white);
+}

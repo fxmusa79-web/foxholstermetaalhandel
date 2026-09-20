@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+  <title>Temporary business photography placeholder</title>
+  <rect width="640" height="400" fill="#202325"/>
+  <rect x="80" y="90" width="200" height="200" fill="#2a2e30" stroke="#4a5154"/>
+  <rect x="310" y="140" width="250" height="150" fill="#17191A" stroke="#B85F32"/>
+  <text x="80" y="360" fill="#8a9093" font-family="Arial, sans-serif" font-size="13" letter-spacing="1.5">PLACEHOLDER - BUSINESS</text>
+</svg>

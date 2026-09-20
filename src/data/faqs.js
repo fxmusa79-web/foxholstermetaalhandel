@@ -1,0 +1,32 @@
+export const faqs = [
+  {
+    question: 'Welke metalen kan ik aanbieden?',
+    answer:
+      'U kunt onder meer ferro, non-ferro, kabels, koper, aluminium, RVS, messing, motoren, machines en transformatoren aanbieden. Of een specifieke partij wordt ingenomen, hangt af van soort, hoeveelheid, staat, vervuiling en verwerking. Stuur foto’s en een korte omschrijving mee.',
+  },
+  {
+    question: 'Kopen jullie ook kabels en koper in?',
+    answer:
+      'Kabels en koper kunnen worden aangeboden. Een beoordeling volgt op basis van foto’s, soort, hoeveelheid en staat. Er worden geen prijzen of inname vooraf gegarandeerd.',
+  },
+  {
+    question: 'Kunnen grotere partijen worden opgehaald?',
+    answer:
+      'Ophalen of een beoordeling op locatie kan mogelijk zijn bij geschikte grotere partijen, machines of installaties. Dat hangt af van hoeveelheid, locatie, bereikbaarheid, laadmogelijkheden en type materiaal. Niet elke partij wordt opgehaald.',
+  },
+  {
+    question: 'Kan ik als particulier metaal aanbieden?',
+    answer:
+      'Ja. Particuliere partijen kunnen worden aangeboden, van een kleinere hoeveelheid tot een grotere opruimpartij. Kleine partijen worden in de regel na beoordeling gebracht. Grote partijen kunnen, als de omstandigheden het toelaten, voor ophalen of locatiebeoordeling in aanmerking komen.',
+  },
+  {
+    question: 'Werken jullie ook met bedrijven?',
+    answer:
+      'Ja. Foxholster Metaalhandel werkt met particulieren én bedrijven, bijvoorbeeld installateurs, aannemers, sloopbedrijven, werkplaatsen, onderhoudsdiensten en bedrijven met terugkerende metaalstromen. Afspraken worden per situatie bekeken.',
+  },
+  {
+    question: 'Wat moet ik meesturen voor een beoordeling?',
+    answer:
+      'Foto’s van de partij, het type materiaal, een geschatte hoeveelheid, postcode of plaats, en of het om brengen of een mogelijke ophaalvraag gaat. Bij machines, motoren of transformatoren: typegegevens, bereikbaarheid en of demontage of hijsen nodig is.',
+  },
+]

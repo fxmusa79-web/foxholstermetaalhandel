@@ -1,0 +1,148 @@
+/* Mobile-first. Explicit checks: 320 / 360 / 390 / 430 and desktop 1366 / 1440 / 1920. */
+
+@media (min-width: 360px) {
+  .hero {
+    padding-block: 2.15rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .usp-strip li {
+    flex-basis: 11rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .hero__grid,
+  .split {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .split--reverse {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .hero {
+    padding-block: 2.6rem 2.8rem;
+  }
+
+  .hero__media img,
+  .hero__media svg {
+    max-height: 26rem;
+    min-height: 18rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .process ol {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  }
+
+  .section {
+    padding-block: 3.25rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .usp-strip ul {
+    flex-wrap: nowrap;
+  }
+
+  .usp-strip li {
+    flex: 1 1 0;
+    padding: 1.05rem 1rem;
+  }
+}
+
+@media (min-width: 1180px) {
+  .nav-desktop {
+    display: block;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .header-actions .btn {
+    min-height: 2.55rem;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3rem;
+  }
+
+  h1 {
+    max-width: 16ch;
+  }
+}
+
+/* Keep 1366px navigation from wrapping awkwardly. */
+@media (min-width: 1180px) and (max-width: 1439px) {
+  .nav-desktop a {
+    padding-inline: 0.32rem;
+    font-size: 0.78rem;
+  }
+
+  .brand__place {
+    display: none;
+  }
+}
+
+@media (max-width: 359px) {
+  .brand__place {
+    display: none;
+  }
+
+  .topbar__tag {
+    display: none;
+  }
+
+  .hero {
+    padding-block: 1.6rem;
+  }
+
+  .btn {
+    min-height: 2.65rem;
+    padding-inline: 0.85rem;
+  }
+}
+
+@media (max-width: 429px) {
+  .hero__actions .btn,
+  .cta-band__actions .btn {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 9.5rem;
+  }
+
+  .topbar {
+    font-size: 0.72rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    padding-block: 3.4rem;
+  }
+
+  .container {
+    width: min(100% - 4rem, 76rem);
+  }
+}

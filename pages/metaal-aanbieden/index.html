@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metaal aanbieden | Foxholster Metaalhandel</title>
+    <meta
+      name="description"
+      content="Meld een metaalpartij aan bij Foxholster Metaalhandel in Foxhol. Foto’s, type materiaal en locatie meesturen. Het formulier is nog niet gekoppeld aan een backend."
+    />
+    <link rel="canonical" href="https://www.example.nl/pages/metaal-aanbieden/" />
+    <meta property="og:title" content="Metaal aanbieden | Foxholster Metaalhandel" />
+    <meta property="og:description" content="Particulier of zakelijk metaal aanbieden: koper, kabels, aluminium, RVS, machines of een gemengde partij. Beoordeling volgt op de aangeleverde informatie." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.example.nl/pages/metaal-aanbieden/" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:site_name" content="Foxholster Metaalhandel" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Metaal aanbieden",
+        "url": "https://www.example.nl/pages/metaal-aanbieden/"
+      }
+    </script>
+  </head>
+  <body data-page="metaal-aanbieden">
+    <a class="skip-link" href="#inhoud">Ga naar inhoud</a>
+    <div data-partial="topbar"></div>
+    <div data-partial="header"></div>
+    <main id="inhoud" class="site-main">
+      <header class="page-hero">
+        <div class="container">
+          <p class="kicker">Aanmelden</p>
+          <h1>Metaal aanbieden</h1>
+          <p class="lead">Beschrijf de partij zo concreet mogelijk. We beoordelen wat er mogelijk is. Er is nog geen werkende verzending: het formulier is voorbereid op een latere technische koppeling.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container split">
+          <div class="prose">
+            <h2>Wat u kunt aanbieden</h2>
+            <p>Koper, kabels, aluminium, RVS, messing, ferro, motoren, machines, transformatoren of een gemengde partij. Zie het <a href="/pages/materialen/">materiaaloverzicht</a> voor voorbeelden.</p>
+            <h2>Particulier of zakelijk</h2>
+            <p>Beide kan. Vul bij bedrijven de bedrijfsnaam in. Kleine partijen worden meestal gebracht; grotere lots kunnen voor ophalen worden bekeken.</p>
+            <div class="notice notice--dev u-mt-lg">
+              Foto-upload en verzending zijn in deze ontwikkelversie niet actief. Bestanden worden niet naar een server gestuurd.
+            </div>
+          </div>
+          <div class="form-panel">
+            <form class="form" data-offer-form novalidate>
+              <div class="form-grid form-grid--2">
+                <div class="form-field">
+                  <label for="naam">Naam <span class="req">*</span></label>
+                  <input id="naam" name="naam" type="text" required autocomplete="name" />
+                  <span class="field-error"></span>
+                </div>
+                <div class="form-field">
+                  <label for="bedrijf">Bedrijfsnaam</label>
+                  <input id="bedrijf" name="bedrijf" type="text" autocomplete="organization" />
+                </div>
+                <div class="form-field">
+                  <label for="telefoon">Telefoonnummer <span class="req">*</span></label>
+                  <input id="telefoon" name="telefoon" type="tel" required autocomplete="tel" />
+                  <span class="field-error"></span>
+                </div>
+                <div class="form-field">
+                  <label for="email">E-mailadres <span class="req">*</span></label>
+                  <input id="email" name="email" type="email" required autocomplete="email" />
+                  <span class="field-error"></span>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="plaats">Postcode / plaats <span class="req">*</span></label>
+                <input id="plaats" name="plaats" type="text" required autocomplete="postal-code" />
+                <span class="field-error"></span>
+              </div>
+              <div class="form-grid form-grid--2">
+                <div class="form-field">
+                  <label for="materiaal">Type materiaal <span class="req">*</span></label>
+                  <select id="materiaal" name="materiaal" required data-material-options>
+                    <option value="">Kies een type</option>
+                  </select>
+                  <span class="field-error"></span>
+                </div>
+                <div class="form-field">
+                  <label for="hoeveelheid">Geschatte hoeveelheid</label>
+                  <input id="hoeveelheid" name="hoeveelheid" type="text" placeholder="Bijv. 200 kg of 1 aanhanger" />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="omschrijving">Omschrijving <span class="req">*</span></label>
+                <textarea id="omschrijving" name="omschrijving" required placeholder="Wat ligt er, hoe is het gescheiden, moet het gebracht of opgehaald worden?"></textarea>
+                <span class="field-error"></span>
+              </div>
+              <div class="form-field">
+                <label for="photos">Foto’s uploaden</label>
+                <input id="photos" name="photos" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple />
+                <p class="field-help">JPG, PNG, WebP of HEIC. Meerdere bestanden mogelijk. Upload wordt pas actief wanneer de backend is gekoppeld.</p>
+              </div>
+              <div class="form-field">
+                <label class="checkbox">
+                  <input type="checkbox" name="privacy" required />
+                  <span>Ik ga akkoord met het <a href="/pages/privacybeleid/">privacybeleid</a> en begrijp dat deze aanvraag nog niet technisch wordt verzonden. <span class="req">*</span></span>
+                </label>
+                <span class="field-error"></span>
+              </div>
+              <button class="btn btn--primary" type="submit">Aanvraag controleren</button>
+              <p class="form-status form-status--info" data-form-status hidden></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-partial="footer"></div>
+    <div data-partial="consent"></div>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

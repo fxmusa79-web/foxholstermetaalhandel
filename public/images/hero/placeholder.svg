@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img">
+  <title>Temporary industrial photo placeholder</title>
+  <rect width="800" height="500" fill="#202325"/>
+  <rect x="0" y="0" width="800" height="500" fill="#17191A"/>
+  <rect x="70" y="210" width="280" height="18" fill="#62686B"/>
+  <rect x="70" y="236" width="280" height="18" fill="#4e5457"/>
+  <rect x="70" y="262" width="280" height="18" fill="#6d7376"/>
+  <rect x="70" y="288" width="220" height="18" fill="#B85F32"/>
+  <rect x="390" y="160" width="22" height="210" fill="#8a9093"/>
+  <rect x="424" y="190" width="22" height="180" fill="#62686B"/>
+  <rect x="458" y="140" width="22" height="230" fill="#9aa0a3"/>
+  <rect x="520" y="250" width="210" height="90" fill="#2f3436" stroke="#4a5154" stroke-width="2"/>
+  <rect x="540" y="270" width="70" height="44" fill="#17191A"/>
+  <rect x="630" y="270" width="80" height="44" fill="#3a4043"/>
+  <polygon points="500,250 625,180 750,250" fill="#3d4346"/>
+  <text x="70" y="430" fill="#8a9093" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">PLACEHOLDER IMAGE - NOT PRODUCTION PHOTO</text>
+</svg>

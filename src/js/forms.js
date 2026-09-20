@@ -1,0 +1,119 @@
+import { materialSelectOptions } from '../data/materials.js'
+
+/**
+ * Frontend-only form behaviour.
+ *
+ * FUTURE INTEGRATION POINT
+ * -------------------------
+ * Replace `submitToPlaceholder()` with a POST to a Cloudflare Worker.
+ * Intended later stack (NOT configured in this project):
+ * - Cloudflare Worker endpoint
+ * - Resend for e-mail delivery
+ * - Cloudflare Turnstile for bot protection
+ *
+ * Do not invent endpoint URLs, API keys or secrets here.
+ * Do not show a fake "verzonden" success state until a real backend exists.
+ */
+
+const DEV_MESSAGE =
+  'De aanvraagmodule wordt technisch gekoppeld voordat de website live gaat. Er is nu geen backend actief; uw gegevens zijn niet verzonden.'
+
+function fillMaterialSelects(root) {
+  root.querySelectorAll('[data-material-options]').forEach((select) => {
+    if (select.dataset.filled === 'true') return
+    const placeholder = select.querySelector('option[value=""]')
+    select.innerHTML = ''
+    if (placeholder) select.append(placeholder)
+    else {
+      const option = document.createElement('option')
+      option.value = ''
+      option.textContent = 'Kies een type'
+      select.append(option)
+    }
+    materialSelectOptions.forEach((item) => {
+      const option = document.createElement('option')
+      option.value = item.value
+      option.textContent = item.label
+      select.append(option)
+    })
+    select.dataset.filled = 'true'
+  })
+}
+
+function setFieldError(field, message) {
+  const holder = field.closest('.form-field')?.querySelector('.field-error')
+  field.setAttribute('aria-invalid', message ? 'true' : 'false')
+  if (holder) holder.textContent = message || ''
+}
+
+function validateForm(form) {
+  let ok = true
+  form.querySelectorAll('[required]').forEach((field) => {
+    let message = ''
+    if (field.type === 'checkbox' && !field.checked) {
+      message = 'Bevestig de privacyverklaring om verder te gaan.'
+    } else if (field.type === 'email' && field.value && !field.validity.valid) {
+      message = 'Vul een geldig e-mailadres in.'
+    } else if (!field.value || !String(field.value).trim()) {
+      message = 'Dit veld is verplicht.'
+    } else if (!field.validity.valid) {
+      message = field.validationMessage
+    }
+    setFieldError(field, message)
+    if (message) ok = false
+  })
+  return ok
+}
+
+async function submitToPlaceholder(_payload) {
+  // TODO: POST JSON to the future Worker endpoint once it exists.
+  // Example shape (do not enable until the endpoint is real):
+  // await fetch(import.meta.env.VITE_FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+  return { ok: false, deferred: true }
+}
+
+function showStatus(form, text) {
+  const status = form.querySelector('[data-form-status]')
+  if (!status) return
+  status.hidden = false
+  status.textContent = text
+}
+
+export function initForms() {
+  const forms = document.querySelectorAll('[data-offer-form], [data-contact-form]')
+  forms.forEach((form) => {
+    fillMaterialSelects(form)
+
+    form.addEventListener('input', (event) => {
+      const field = event.target
+      if (field instanceof HTMLElement && field.hasAttribute('required')) {
+        setFieldError(field, '')
+      }
+    })
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+      if (!validateForm(form)) {
+        const firstInvalid = form.querySelector('[aria-invalid="true"]')
+        firstInvalid?.focus()
+        return
+      }
+
+      const submit = form.querySelector('[type="submit"]')
+      if (submit) submit.disabled = true
+
+      const data = new FormData(form)
+      const payload = Object.fromEntries(data.entries())
+      payload.photos = data.getAll('photos')
+
+      try {
+        await submitToPlaceholder(payload)
+        showStatus(form, DEV_MESSAGE)
+      } catch (error) {
+        showStatus(form, DEV_MESSAGE)
+      } finally {
+        if (submit) submit.disabled = false
+      }
+    })
+  })
+}
