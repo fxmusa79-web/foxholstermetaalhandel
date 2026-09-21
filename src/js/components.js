@@ -230,6 +230,25 @@ export function footerHtml() {
         <p class="footer-certs__label">Registraties &amp; kwaliteit</p>
         ${certLogosHtml('cert-logos cert-logos--footer')}
       </div>
+      <div class="container footer-creditbar">
+        <p class="footer-copy">© ${new Date().getFullYear()} ${escapeHtml(business.companyName)}. Alle rechten voorbehouden.</p>
+        <a
+          class="footer-credit"
+          href="https://tinsightsagency.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Website ontwikkeld door TINSIGHTS Agency"
+        >
+          <img
+            src="/images/brand/tinsights-watermark.png"
+            alt="Built by TINSIGHTS"
+            width="2048"
+            height="682"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </div>
     </footer>
   `
 }

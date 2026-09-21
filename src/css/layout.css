@@ -673,6 +673,53 @@ body.is-nav-open .contact-fab {
   align-items: center;
 }
 
+.footer-creditbar {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  padding-bottom: calc(var(--floating-contact-size) + 1.75rem);
+  border-top: 1px solid #2c3133;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  text-align: center;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: 1.45;
+  color: #b4b8ba;
+}
+
+.footer-credit {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 8.4375rem;
+  line-height: 0;
+  opacity: 0.82;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.footer-credit img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.site-footer .footer-credit:hover {
+  color: inherit;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.footer-credit:focus-visible {
+  outline: 2px solid var(--color-brand-red);
+  outline-offset: 4px;
+}
+
 .photo-block {
   margin: 0;
   overflow: hidden;

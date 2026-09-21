@@ -516,6 +516,10 @@
 }
 
 @media (min-width: 768px) {
+  .footer-credit {
+    max-width: 9.375rem;
+  }
+
   .legal-toc ol {
     columns: 2;
     column-gap: 2.25rem;
@@ -658,6 +662,20 @@
   .footer-reg {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 1.25rem;
+  }
+
+  .footer-creditbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+    padding-bottom: 0;
+    padding-right: calc(var(--floating-contact-size) + 1.5rem);
+  }
+
+  .footer-credit {
+    max-width: 10.3125rem;
   }
 }
 
