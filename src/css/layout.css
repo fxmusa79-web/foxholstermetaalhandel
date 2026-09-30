@@ -696,28 +696,58 @@ body.is-nav-open .contact-fab {
 .footer-credit {
   display: inline-flex;
   flex-shrink: 0;
-  width: 100%;
-  max-width: 8.4375rem;
+  width: min(100%, 12.75rem);
   line-height: 0;
-  opacity: 0.82;
-  transition: opacity 200ms ease, transform 200ms ease;
+  transition: filter 220ms ease, transform 220ms ease;
 }
 
 .footer-credit img {
   width: 100%;
   height: auto;
   display: block;
+  transform-origin: center;
+  animation: footer-credit-glow 4.6s ease-in-out infinite;
 }
 
-.site-footer .footer-credit:hover {
+@keyframes footer-credit-glow {
+  0%,
+  100% {
+    opacity: 0.82;
+    filter: brightness(0.98);
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.16);
+    transform: translateY(-3px);
+  }
+}
+
+.site-footer .footer-credit:hover,
+.site-footer .footer-credit:focus-visible {
   color: inherit;
+}
+
+.site-footer .footer-credit:hover img,
+.site-footer .footer-credit:focus-visible img {
+  animation: none;
   opacity: 1;
-  transform: translateY(-1px);
+  filter: brightness(1.22);
+  transform: translateY(-2px);
 }
 
 .footer-credit:focus-visible {
   outline: 2px solid var(--color-brand-red);
   outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-credit img {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
 }
 
 .photo-block {

@@ -240,10 +240,10 @@ export function footerHtml() {
           aria-label="Website ontwikkeld door TINSIGHTS Agency"
         >
           <img
-            src="/images/brand/tinsights-watermark.png"
+            src="/images/brand/tinsights-watermark-gold.png"
             alt="Built by TINSIGHTS"
-            width="2048"
-            height="682"
+            width="2172"
+            height="724"
             loading="lazy"
             decoding="async"
           />

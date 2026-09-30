@@ -517,7 +517,7 @@
 
 @media (min-width: 768px) {
   .footer-credit {
-    max-width: 9.375rem;
+    width: min(100%, 15.5rem);
   }
 
   .legal-toc ol {
@@ -675,7 +675,7 @@
   }
 
   .footer-credit {
-    max-width: 10.3125rem;
+    width: 17.5rem;
   }
 }
 
