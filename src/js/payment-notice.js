@@ -3,7 +3,7 @@
  * Set PAYMENT_NOTICE_ENABLED to false (or remove this module from main.js)
  * when the client asks to take the overlay down.
  */
-export const PAYMENT_NOTICE_ENABLED = true
+export const PAYMENT_NOTICE_ENABLED = false
 
 const EMAIL = 'info@tinsightsagency.com'
 const PHONE_DISPLAY = '+31 20 369 1663'
