@@ -613,6 +613,190 @@ body.cookie-open .site-main {
   padding-bottom: calc(var(--consent-banner-space, 0px) + 0.75rem);
 }
 
+/* Temporary invoice notice — remove when PAYMENT_NOTICE_ENABLED is false */
+.payment-notice {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: max(1rem, env(safe-area-inset-top, 0px))
+    max(1rem, env(safe-area-inset-right, 0px))
+    max(1rem, env(safe-area-inset-bottom, 0px))
+    max(1rem, env(safe-area-inset-left, 0px));
+  background:
+    linear-gradient(160deg, rgba(12, 13, 14, 0.92), rgba(21, 22, 23, 0.94)),
+    rgba(21, 22, 23, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.payment-notice__panel {
+  width: min(100%, 32rem);
+  margin: auto;
+  padding: clamp(1.35rem, 4vw, 2rem);
+  background: var(--color-white);
+  border: 1px solid rgba(242, 13, 13, 0.22);
+  border-radius: 12px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 24px 60px rgba(0, 0, 0, 0.45);
+  text-align: left;
+  animation: payment-notice-in 320ms ease both;
+}
+
+.payment-notice__eyebrow {
+  margin: 0 0 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-red);
+}
+
+.payment-notice__ohno {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 8vw, 3.4rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-brand-red);
+}
+
+.payment-notice__title {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 4.5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+}
+
+.payment-notice__body {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0 0 1.35rem;
+}
+
+.payment-notice__body p {
+  margin: 0;
+  font-size: clamp(0.95rem, 2.6vw, 1.05rem);
+  line-height: 1.55;
+  color: var(--color-muted);
+}
+
+.payment-notice__actions {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.payment-notice__btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.85rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.payment-notice__btn--primary {
+  background: var(--color-brand-red);
+  border-color: var(--color-brand-red);
+  color: var(--color-white);
+}
+
+.payment-notice__btn--primary:hover,
+.payment-notice__btn--primary:focus-visible {
+  background: var(--color-brand-red-dark);
+  border-color: var(--color-brand-red-dark);
+  color: var(--color-white);
+}
+
+.payment-notice__btn--ghost {
+  background: var(--color-white);
+  border-color: var(--color-line-strong);
+  color: var(--color-charcoal);
+}
+
+.payment-notice__btn--ghost:hover,
+.payment-notice__btn--ghost:focus-visible {
+  border-color: var(--color-charcoal);
+  color: var(--color-charcoal);
+}
+
+.payment-notice__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  margin-top: 0.15rem;
+  padding: 0.35rem 0.25rem;
+  color: var(--color-brand-blue);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.payment-notice__link:hover,
+.payment-notice__link:focus-visible {
+  color: var(--color-charcoal);
+}
+
+.payment-notice__btn:focus-visible,
+.payment-notice__link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+@keyframes payment-notice-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+html.payment-notice-open,
+body.payment-notice-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+html.payment-notice-open .consent-banner,
+html.payment-notice-open .consent-panel,
+html.payment-notice-open .contact-fab {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .payment-notice__panel {
+    animation: none;
+  }
+}
+
 .page-intro {
   padding: 1.35rem 0 1.2rem;
   background: var(--color-surface);

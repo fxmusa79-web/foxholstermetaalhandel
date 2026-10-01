@@ -17,6 +17,7 @@ import { initGalleries } from './gallery.js'
 import { initContactWidget } from './contact-widget.js'
 import { initMaterialPicker } from './picker.js'
 import { initFaq } from './faq.js'
+import { initPaymentNotice } from './payment-notice.js'
 
 document.documentElement.classList.add('js-ready')
 
@@ -32,6 +33,7 @@ initContactWidget()
 initMaterialPicker()
 initFaq()
 initLegalToc()
+initPaymentNotice()
 
 function initLegalToc() {
   const toc = document.querySelector('[data-legal-toc]')
